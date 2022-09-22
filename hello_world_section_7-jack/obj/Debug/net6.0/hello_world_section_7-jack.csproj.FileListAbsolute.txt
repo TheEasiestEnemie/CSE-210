@@ -1,0 +1,15 @@
+C:\Users\13857\OneDrive\Desktop\CSE 210\hello_world_section_7-jack\bin\Debug\net6.0\hello_world_section_7-jack.exe
+C:\Users\13857\OneDrive\Desktop\CSE 210\hello_world_section_7-jack\bin\Debug\net6.0\hello_world_section_7-jack.deps.json
+C:\Users\13857\OneDrive\Desktop\CSE 210\hello_world_section_7-jack\bin\Debug\net6.0\hello_world_section_7-jack.runtimeconfig.json
+C:\Users\13857\OneDrive\Desktop\CSE 210\hello_world_section_7-jack\bin\Debug\net6.0\hello_world_section_7-jack.dll
+C:\Users\13857\OneDrive\Desktop\CSE 210\hello_world_section_7-jack\bin\Debug\net6.0\hello_world_section_7-jack.pdb
+C:\Users\13857\OneDrive\Desktop\CSE 210\hello_world_section_7-jack\obj\Debug\net6.0\hello_world_section_7-jack.csproj.AssemblyReference.cache
+C:\Users\13857\OneDrive\Desktop\CSE 210\hello_world_section_7-jack\obj\Debug\net6.0\hello_world_section_7-jack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\13857\OneDrive\Desktop\CSE 210\hello_world_section_7-jack\obj\Debug\net6.0\hello_world_section_7-jack.AssemblyInfoInputs.cache
+C:\Users\13857\OneDrive\Desktop\CSE 210\hello_world_section_7-jack\obj\Debug\net6.0\hello_world_section_7-jack.AssemblyInfo.cs
+C:\Users\13857\OneDrive\Desktop\CSE 210\hello_world_section_7-jack\obj\Debug\net6.0\hello_world_section_7-jack.csproj.CoreCompileInputs.cache
+C:\Users\13857\OneDrive\Desktop\CSE 210\hello_world_section_7-jack\obj\Debug\net6.0\hello_world_section_7-jack.dll
+C:\Users\13857\OneDrive\Desktop\CSE 210\hello_world_section_7-jack\obj\Debug\net6.0\refint\hello_world_section_7-jack.dll
+C:\Users\13857\OneDrive\Desktop\CSE 210\hello_world_section_7-jack\obj\Debug\net6.0\hello_world_section_7-jack.pdb
+C:\Users\13857\OneDrive\Desktop\CSE 210\hello_world_section_7-jack\obj\Debug\net6.0\hello_world_section_7-jack.genruntimeconfig.cache
+C:\Users\13857\OneDrive\Desktop\CSE 210\hello_world_section_7-jack\obj\Debug\net6.0\ref\hello_world_section_7-jack.dll
