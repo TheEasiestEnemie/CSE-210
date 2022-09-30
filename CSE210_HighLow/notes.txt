@@ -1,0 +1,25 @@
+classes : card, game
+
+card:
+DrawCard; zero paramaters
+IsHigher; two paramaters:
+ first: initial card
+ second: pulled card
+
+game:
+ChangePoints; score paramater:
+ runs IsHigher:
+ if true add 100 points
+ if false removes 75 points
+IsGameOver; score
+ Check if score < 0
+GiveUp; zero 
+ ask player if wants to end:
+ if true end
+ if false continue
+runs game:
+ pulls DrawCard
+ guess; user input, sting (high or low)
+ pull DrawCard
+ IsHigher; compares guess
+
