@@ -9,7 +9,7 @@
     /// Gets a guess from the player. True if "h", false if "l"
     /// Takes no parameters
     /// returns a bool true or false 
-    public GetGuess()`
+    public GetGuess()
     {
 
     }
