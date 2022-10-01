@@ -22,4 +22,6 @@ runs game:
  guess; user input, sting (high or low)
  pull DrawCard
  IsHigher; compares guess
+ calls isguesscorrect, and adds 100 or subtracts 75 accordingly
+ through the changepoints method
 
