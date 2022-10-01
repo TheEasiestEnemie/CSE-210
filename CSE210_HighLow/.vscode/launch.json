@@ -10,11 +10,11 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/CSE210_HighLow/bin/Debug/net6.0/HighLow.dll",
+            "program": "${workspaceFolder}/bin/Debug/net6.0/HighLow.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/CSE210_HighLow",
+            "cwd": "${workspaceFolder}",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
-            "console": "integratedTerminal",
+            "console": "internalConsole",
             "stopAtEntry": false
         },
         {
