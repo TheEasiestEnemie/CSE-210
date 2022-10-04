@@ -16,6 +16,7 @@ class Card
     /// Returns a bool True or False
     public bool IsHigher(int card1, int card2)
     {
+        
         if (card2 > card1)
         {
             return true;
