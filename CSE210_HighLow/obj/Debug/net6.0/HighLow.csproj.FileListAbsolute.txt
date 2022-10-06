@@ -13,3 +13,18 @@ C:\Users\gpoul\Documents\Git\CSE-210\CSE210_HighLow\obj\Debug\net6.0\refint\High
 C:\Users\gpoul\Documents\Git\CSE-210\CSE210_HighLow\obj\Debug\net6.0\HighLow.pdb
 C:\Users\gpoul\Documents\Git\CSE-210\CSE210_HighLow\obj\Debug\net6.0\HighLow.genruntimeconfig.cache
 C:\Users\gpoul\Documents\Git\CSE-210\CSE210_HighLow\obj\Debug\net6.0\ref\HighLow.dll
+C:\Users\13857\OneDrive\Desktop\CSE 210\CSE210_HighLow\bin\Debug\net6.0\HighLow.exe
+C:\Users\13857\OneDrive\Desktop\CSE 210\CSE210_HighLow\bin\Debug\net6.0\HighLow.deps.json
+C:\Users\13857\OneDrive\Desktop\CSE 210\CSE210_HighLow\bin\Debug\net6.0\HighLow.runtimeconfig.json
+C:\Users\13857\OneDrive\Desktop\CSE 210\CSE210_HighLow\bin\Debug\net6.0\HighLow.dll
+C:\Users\13857\OneDrive\Desktop\CSE 210\CSE210_HighLow\bin\Debug\net6.0\HighLow.pdb
+C:\Users\13857\OneDrive\Desktop\CSE 210\CSE210_HighLow\obj\Debug\net6.0\HighLow.csproj.AssemblyReference.cache
+C:\Users\13857\OneDrive\Desktop\CSE 210\CSE210_HighLow\obj\Debug\net6.0\HighLow.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\13857\OneDrive\Desktop\CSE 210\CSE210_HighLow\obj\Debug\net6.0\HighLow.AssemblyInfoInputs.cache
+C:\Users\13857\OneDrive\Desktop\CSE 210\CSE210_HighLow\obj\Debug\net6.0\HighLow.AssemblyInfo.cs
+C:\Users\13857\OneDrive\Desktop\CSE 210\CSE210_HighLow\obj\Debug\net6.0\HighLow.csproj.CoreCompileInputs.cache
+C:\Users\13857\OneDrive\Desktop\CSE 210\CSE210_HighLow\obj\Debug\net6.0\HighLow.dll
+C:\Users\13857\OneDrive\Desktop\CSE 210\CSE210_HighLow\obj\Debug\net6.0\refint\HighLow.dll
+C:\Users\13857\OneDrive\Desktop\CSE 210\CSE210_HighLow\obj\Debug\net6.0\HighLow.pdb
+C:\Users\13857\OneDrive\Desktop\CSE 210\CSE210_HighLow\obj\Debug\net6.0\HighLow.genruntimeconfig.cache
+C:\Users\13857\OneDrive\Desktop\CSE 210\CSE210_HighLow\obj\Debug\net6.0\ref\HighLow.dll

@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\gpoul\\.nuget\\packages\\": {}
+    "C:\\Users\\13857\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gpoul\\Documents\\Git\\CSE-210\\CSE210_HighLow\\HighLow.csproj",
+      "projectUniqueName": "C:\\Users\\13857\\OneDrive\\Desktop\\CSE 210\\CSE210_HighLow\\HighLow.csproj",
       "projectName": "HighLow",
-      "projectPath": "C:\\Users\\gpoul\\Documents\\Git\\CSE-210\\CSE210_HighLow\\HighLow.csproj",
-      "packagesPath": "C:\\Users\\gpoul\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gpoul\\Documents\\Git\\CSE-210\\CSE210_HighLow\\obj\\",
+      "projectPath": "C:\\Users\\13857\\OneDrive\\Desktop\\CSE 210\\CSE210_HighLow\\HighLow.csproj",
+      "packagesPath": "C:\\Users\\13857\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\13857\\OneDrive\\Desktop\\CSE 210\\CSE210_HighLow\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\gpoul\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\13857\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
