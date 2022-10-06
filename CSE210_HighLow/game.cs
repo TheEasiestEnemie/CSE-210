@@ -6,7 +6,7 @@ public class Game
     /// returns a bool true or false 
     public bool GetGuess()
     {
-        Console.Write("What is your guess (h, l");
+        Console.Write("What is your guess (h, l): ");
         string? guess = Console.ReadLine();
 
         if (guess == "h")

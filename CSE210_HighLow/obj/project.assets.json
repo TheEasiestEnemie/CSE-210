@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gpoul\\Documents\\C#\\HighLow\\HighLow.csproj",
+      "projectUniqueName": "C:\\Users\\gpoul\\Documents\\Git\\CSE-210\\CSE210_HighLow\\HighLow.csproj",
       "projectName": "HighLow",
-      "projectPath": "C:\\Users\\gpoul\\Documents\\C#\\HighLow\\HighLow.csproj",
+      "projectPath": "C:\\Users\\gpoul\\Documents\\Git\\CSE-210\\CSE210_HighLow\\HighLow.csproj",
       "packagesPath": "C:\\Users\\gpoul\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gpoul\\Documents\\C#\\HighLow\\obj\\",
+      "outputPath": "C:\\Users\\gpoul\\Documents\\Git\\CSE-210\\CSE210_HighLow\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gpoul\\AppData\\Roaming\\NuGet\\NuGet.Config"

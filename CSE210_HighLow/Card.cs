@@ -6,7 +6,7 @@ class Card
     public int DrawCard()
     {
         Random num = new Random();
-        int card = num.Next(13);
+        int card = num.Next(14);
 
         return card;
     }
