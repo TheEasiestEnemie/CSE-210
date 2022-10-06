@@ -6,7 +6,7 @@ class Card
     public int DrawCard()
     {
         Random num = new Random();
-        int card = num.Next(14);
+        int card = num.Next(1, 14);
 
         return card;
     }
@@ -16,14 +16,16 @@ class Card
     /// Returns a bool True or False
     public bool IsHigher(int card1, int card2)
     {
-        
-        if (card2 > card1)
+        while (true)
         {
-            return true;
-        }
-        else 
-        {
-            return false;
+            if (card2 > card1)
+            {
+                return true;
+            }
+            else if (card2 < card1) 
+            {
+                return false;
+            }
         }
     }
 }
