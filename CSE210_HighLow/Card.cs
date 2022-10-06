@@ -1,8 +1,8 @@
 class Card
 {
-    /// "Draws" a card numbered 1-12 using the random method
+    /// "Draws" a card numbered 1-13 using the random method
     /// Takes no parameters
-    /// Returns an int 1-12
+    /// Returns an int 1-13
     public int DrawCard()
     {
         Random num = new Random();
