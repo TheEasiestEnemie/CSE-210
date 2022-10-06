@@ -6,23 +6,46 @@
             
             Card card = new Card();
             Game game = new Game();
-            int test = card.DrawCard();
-            Console.WriteLine(test);
+            bool again = true;
+            
+            int card1 = card.DrawCard();
+            int card2 = card.DrawCard();
+            int score = 300;
 
-            while (game.PlayAgain() != false)
+            bool outcome;
+            bool guessHigher;
+            bool answer;
+
+            while (again)
             {
-                int score = 500;
-                int card1 = card.DrawCard();
-                int card2 = card.DrawCard();
+                
+                Console.WriteLine();
                 Console.WriteLine($"Current card is {card1}");
-                bool outcome = card.IsHigher(card1, card2);
-                bool guessHigher = game.GetGuess();
-                bool answer = game.IsGuessCorrect(guessHigher, outcome);
+                outcome = card.IsHigher(card1, card2);
+                guessHigher = game.GetGuess();
+                answer = game.IsGuessCorrect(guessHigher, outcome);
+                Console.WriteLine($"Your card was {card2}");
                 score = game.ChangePoints(answer, score);
+                Console.WriteLine($"Your new score is {score}");
+                if (game.IsGameOver(score) == false)
+                {
+                    again = game.PlayAgain();
+                    
+                }
+                else
+                {
+                    again = false;
+                }
+                
+                if (again)
+                {
+                    card1 = card2;
+                    card2 = card.DrawCard();
+
+                    
+                }
 
                 
-
-                game.GetGuess();
             }
         }
 }

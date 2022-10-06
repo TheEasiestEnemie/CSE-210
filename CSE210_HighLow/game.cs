@@ -6,18 +6,19 @@ public class Game
     /// returns a bool true or false 
     public bool GetGuess()
     {
-        Console.Write("What is your guess (h, l): ");
-        string? guess = Console.ReadLine();
-
-        if (guess == "h")
+        while (true)
         {
-            return true;
+            Console.Write("What is your guess (h, l): ");
+            string? guess = Console.ReadLine();
+            if (guess == "h")
+            {
+                return true;
+            }
+            else if (guess == "l")
+            {
+                return false;
+            }
         }
-        else
-        {
-            return false;
-        }
-        
     }
 
     /// Checks if the player's guess matches the outcome. The outcome 
@@ -51,6 +52,10 @@ public class Game
         else 
         {
             score -= 75;
+            if (score < 0)
+            {
+                score = 0;
+            }
             return score;
         }
         
@@ -63,6 +68,7 @@ public class Game
     {
         if (score <= 0)
         {
+            Console.WriteLine("GAME OVER");
             return true;
         }
         else
@@ -75,15 +81,19 @@ public class Game
     /// returns a bool True/False. True if answer is yes
     public bool PlayAgain()
     {
-        Console.Write("Do you want to play another round?(YES/NO): ");
-        string? play = Console.ReadLine();
-        if (play == "YES")
+        while (true)
         {
-            return true;
-        }
-        else 
-        {
-            return false;
+            Console.Write("Do you want to play another round?(YES/NO): ");
+            string? play = Console.ReadLine();
+            
+            if (play?.ToUpper() == "YES")
+            {
+                return true;
+            }
+            else if (play?.ToUpper() == "NO") 
+            {
+                return false;
+            }
         }
     }
 }
