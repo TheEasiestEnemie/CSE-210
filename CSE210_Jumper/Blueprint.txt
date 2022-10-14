@@ -1,0 +1,37 @@
+Display:
+    Visual: takes 1 int parameter called stage, prints the visual, returns nothing
+    PrintWord: takes a char Array and prints it with a space inbetween each character, returns nothing
+    Prompt: takes no parameters, prints a prompt, returns an input from the user 
+Words:
+    List prebuilt into it with words
+    NewWord: takes no parameters, returns one String, word
+Word:
+    I dont know how to make this a constructor, but it needs to be in one
+    {
+        string word = NewWord(); (apple)
+        int wordLength = word.length;
+        char[] guessedWord = new char[wordLength]; 
+    }
+
+    FormatGuessedWord: Takes 1 parameter guessedWord and changes the data inside to a blank like this (_____)
+        returns guessedWord
+    GuessLetters: Takes 3 parameters, a char letter given by the user ('p'), guessedWord (_____), 
+        and the word to compare to. Returns the changed guessedWord. (_PP__)
+        WrongGuess: is called when there are no letters in the word (like 'i')
+            changeStage(-1)
+
+
+Jumper:
+    int stage = 4;
+    main:
+        Word word = new Word();
+        PrintWord(FormatGuessedWord)
+        Visual(stage)
+        char guess = Prompt();
+        while (stage > 0) {
+            PrintWord(GuessLetters(guess, word.guessedWord, word.word))
+            Visual(stage)
+            guess = Prompt();
+        }
+
+    changeStage: takes one int parameter and adds it to the stage, returns nothing;
