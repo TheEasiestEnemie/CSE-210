@@ -9,8 +9,8 @@ Word:
     I dont know how to make this a constructor, but it needs to be in one
     {
         string word = NewWord(); (apple)
-        int wordLength = word.length;
-        char[] guessedWord = new char[wordLength]; 
+        int wordLength = word.length; (5)
+        char[] guessedWord = new char[wordLength]; (00000)
     }
 
     FormatGuessedWord: Takes 1 parameter guessedWord and changes the data inside to a blank like this (_____)
@@ -19,8 +19,6 @@ Word:
         and the word to compare to. Returns the changed guessedWord. (_PP__)
         WrongGuess: is called when there are no letters in the word (like 'i')
             changeStage(-1)
-
-
 Jumper:
     int stage = 4;
     main:
@@ -35,3 +33,6 @@ Jumper:
         }
 
     changeStage: takes one int parameter and adds it to the stage, returns nothing;
+
+Also, I'm sorry Poulson I couldn't see your work no matter how I much I pulled from the origin,
+so I just added new classes. I hope that doesn't screw up your work too much.
