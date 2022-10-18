@@ -9,14 +9,19 @@ public class Words
         "while", "visual", "display", "word", "words", "jumper",
         "stack", "pizza"
     };
+    public string rnword;
 
-    public string NewWord()
+    public Words(string rnword)
     {
         int listLength = WordLibrary.Length;
         Random rn = new Random();
         int random = rn.Next(0, listLength);
-        string rnword = WordLibrary[random];
-
+        rnword = WordLibrary[random];
+    }
+    /*
+    public string GetWord(string rnword)
+    {
         return rnword;
     }
+    */
 }
