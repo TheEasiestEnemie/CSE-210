@@ -35,7 +35,7 @@
 
             bool gameOver = Word.AllLettersGuessed(guessedWord);
 
-            if (!gameOver || stage <= 0)
+            if (!gameOver || stage > 0)
             {
                 guess = Display.Prompt();
             }
