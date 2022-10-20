@@ -1,11 +1,11 @@
 
 public class Word 
 {
-    private string word;
-    private int wordLength;
+    private static string word;
+    private static int wordLength;
     private char[] guessedWord;
     private char[] lastGuessedWord;
-    public Word(string word, int wordlength, char[] guessedWord)
+    public Word()
     {
         Words wordLibrary = new Words();
 
@@ -15,7 +15,12 @@ public class Word
         lastGuessedWord = guessedWord;
     }
 
-    public char[] FormatGuessedWord(char[] guessedWord)
+    public static string GetWord()
+    {
+        return word;
+    }
+
+    public static char[] FormatGuessedWord(char[] guessedWord)
     {
         for (int i = 0; i < guessedWord.Length; i++)
         {
@@ -24,7 +29,7 @@ public class Word
         return guessedWord;
     }
 
-    public char[] GuessLetters(char letter, string word, char[] guessedWord)
+    public static char[] GuessLetters(char letter, string word, char[] guessedWord)
     {
         char[] wordArray = word.ToCharArray();
 
@@ -39,15 +44,27 @@ public class Word
         return guessedWord;
     }
 
-    public bool IsGuessCorrect(char[] guessedWord, char[] lastGuessedWord)
+    public static bool IsGuessCorrect(char[] guessedWord, char[] lastGuessedWord)
     {
         for (int i = 0; i < wordLength; i++)
         {
-            if (guessedWord[i] == lastGuessedWord[i])
+            if (guessedWord[i] != lastGuessedWord[i])
             {
                 return true;
             }
         }
         return false;
+    }
+
+    public static bool AllLettersGuessed(char[] guessedWord)
+    {
+        for (int i = 0; i < wordLength; i++)
+        {
+            if (guessedWord[i] == '_')
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

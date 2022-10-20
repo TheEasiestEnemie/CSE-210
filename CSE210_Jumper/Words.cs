@@ -23,10 +23,4 @@ public class Words
 
         return rnword;
     }
-    /*
-    public string GetWord(string rnword)
-    {
-        return rnword;
-    }
-    */
 }
