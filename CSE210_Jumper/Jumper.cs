@@ -17,25 +17,27 @@
 
         char guess = Display.Prompt();
 
+        bool letterInWord;
+        bool gameOver;
+
         while (stage > 0 || !Word.AllLettersGuessed(guessedWord))
         {
             guessedWord = Word.GuessLetters(guess, hiddenWord, guessedWord);
             Display.PrintWord(guessedWord);
 
-            bool letterInWord = Word.IsGuessCorrect(guessedWord, lastGuessedWord);
+            letterInWord = Word.IsGuessCorrect(guessedWord, lastGuessedWord);
 
             if (!letterInWord) //If guess didnt get a new letter
             {
-                //stage--;
-                Console.WriteLine("Wrong");
+                stage--;
             }
             lastGuessedWord = guessedWord;
 
             Display.Visual(stage);
 
-            bool gameOver = Word.AllLettersGuessed(guessedWord);
+            gameOver = Word.AllLettersGuessed(guessedWord);
 
-            if (!gameOver)
+            if (!gameOver || stage < 0)
             {
                 guess = Display.Prompt();
             }
