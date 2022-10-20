@@ -20,26 +20,28 @@
 
         bool letterInWord = false;
         bool gameOver = false;
+        string guessedStr;
 
-        while (stage > 0 || !gameOver)
+        while (stage > 0 && !gameOver)
         {
             guessedWord = Word.GuessLetters(guess, hiddenWord, guessedWord);
             Display.PrintWord(guessedWord);
 
-            bool letterInWord = Word.IsGuessCorrect(guessedWord, lastGuessedWord);
+            letterInWord = Word.IsGuessCorrect(guessedWord, lastGuessedWord);
 
             if (!letterInWord) //If guess didnt get a new letter
             {
                 stage--;
                 
             }
-            lastGuessedWord = guessedWord;
+            guessedStr = new string(guessedWord);
+            lastGuessedWord = guessedStr.ToCharArray();
 
             Display.Visual(stage);
 
-            bool gameOver = Word.AllLettersGuessed(guessedWord);
+            gameOver = Word.AllLettersGuessed(guessedWord);
 
-            if (!gameOver || stage > 0)
+            if (!gameOver && stage > 0)
             {
                 guess = Display.Prompt();
             }
