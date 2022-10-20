@@ -17,6 +17,7 @@
 
         char guess = Display.Prompt();
 
+
         bool letterInWord = false;
         bool gameOver = false;
 
@@ -25,17 +26,18 @@
             guessedWord = Word.GuessLetters(guess, hiddenWord, guessedWord);
             Display.PrintWord(guessedWord);
 
-            letterInWord = Word.IsGuessCorrect(guessedWord, lastGuessedWord);
+            bool letterInWord = Word.IsGuessCorrect(guessedWord, lastGuessedWord);
 
             if (!letterInWord) //If guess didnt get a new letter
             {
                 stage--;
+                
             }
             lastGuessedWord = guessedWord;
 
             Display.Visual(stage);
 
-            gameOver = Word.AllLettersGuessed(guessedWord);
+            bool gameOver = Word.AllLettersGuessed(guessedWord);
 
             if (!gameOver || stage > 0)
             {
