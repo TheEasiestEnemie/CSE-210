@@ -17,10 +17,10 @@
 
         char guess = Display.Prompt();
 
-        bool letterInWord;
-        bool gameOver;
+        bool letterInWord = false;
+        bool gameOver = false;
 
-        while (stage > 0 || !Word.AllLettersGuessed(guessedWord))
+        while (stage > 0 || !gameOver)
         {
             guessedWord = Word.GuessLetters(guess, hiddenWord, guessedWord);
             Display.PrintWord(guessedWord);
@@ -37,7 +37,7 @@
 
             gameOver = Word.AllLettersGuessed(guessedWord);
 
-            if (!gameOver || stage < 0)
+            if (!gameOver || stage > 0)
             {
                 guess = Display.Prompt();
             }
