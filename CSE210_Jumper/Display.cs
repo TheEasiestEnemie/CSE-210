@@ -12,30 +12,32 @@ public class Display {
     "  \ /  "
     The double backslashes are neccessary otherwise it thinks its an escape character like \n or \+
     */
-    String[] parachute = new String[4] {"  ___  ", " /___\\ ", " \\   / ", "  \\ /  "};
-    String[] man = new String[3] {"   O   ", "  /|\\  ", "  / \\  "};
+    private String[] parachute = new String[4] {"  ___  ", " /___\\ ", " \\   / ", "  \\ /  "};
+    private String[] man = new String[3] {"   O   ", "  /|\\  ", "  / \\  "};
 
-    public void Visual(int stage) 
+    public static void Visual(int stage) 
     {
+        Display visual = new Display();
+
         int startpoint = 4 - stage; // determines how much parachute is left
 
         if (stage != 0) // if the game isn't over
         {
             for (int i = startpoint; i < 4; i++)
             {
-                Console.WriteLine(parachute[i]);
+                Console.WriteLine(visual.parachute[i]);
             }
             for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine(man[i]);
+                Console.WriteLine(visual.man[i]);
             }
         }
         else if (stage == 0) // When the game is over
         {
-            man[0] = "   X   ";
+            visual.man[0] = "   X   ";
             for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine(man[i]);
+                Console.WriteLine(visual.man[i]);
             }
         }
         Console.WriteLine();
@@ -64,7 +66,7 @@ public class Display {
             Console.Write("Guess a letter [a-z]: ");
             input = Console.ReadKey(true).KeyChar;
 
-        } while ((input >= 'A' && input <= 'Z') || (input >= 'a' && input <= 'z')); // chars can be compared to other chars
+        } while ((input <= 'A' && input >= 'Z') || (input <= 'a' && input >= 'z')); // chars can be compared to other chars
 
         // These lines convert the input to lowercase
         string str = input.ToString(); 
