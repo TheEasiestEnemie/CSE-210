@@ -1,0 +1,144 @@
+abs Object
+    abs float velocity
+    abs int size
+    abs var color
+    abs float x
+    abs float y
+
+    GetRandomColor()
+        Make object any color but the background (BLACK)
+
+
+
+Collectable : Object
+    float velocity;
+    int size;
+    var color;
+    float x;
+    float y;
+    var type;
+
+    Collectable()
+        velocity = 0
+        size = 10
+        color = GetRandomColor()
+        x = random(0, SCREENSIZEX)
+        y = 0
+        int coinFlip = Random(0,1);
+        if coinFlip == 0
+            type = new Rock;
+        else if coinFlip == 1
+            type = new Gem;
+
+    Collectable(int v, int s, var c, float posx, float posy, var t) //velocity, size, color, x, y, type of collectable. For creating the object yourself
+        velocity = v
+        size = s
+        color = c
+        x = posx
+        y = posy
+        type = t
+    
+    int tick = 0
+
+    Falling loop
+        type.DrawCollectable();
+        tick++ //use this to slow down fall speed of collectable.
+        y--
+        if off screen, delete itself
+
+    DeleteYourself()
+        enddrawing();
+    
+
+
+Rock : Collectable
+    int pointValue
+
+    DrawCollectable();
+
+
+
+Gem : Collectable
+    pointValue
+
+    DrawCollectable();
+
+
+
+Score
+    int score;
+    int x;
+    int y;
+
+    Score()
+
+    Score loop
+        WriteScore(score)
+
+    WriteScore(int score)
+        RayLib.DrawText(...);
+    
+    ChangeScore(int score, int points)
+        score += points;
+
+Player : Object
+    float velocity;
+    int size;
+    var color;
+    float x;
+    float y;
+
+    Player()
+        velocity = 0
+        size = 10
+        color = RayLib.color.WHITE
+        x = SCREENSIZEX / 2
+        y = SCREENSIZEY - size
+
+    Move Left/Right loop
+        DrawPlayer(velocity)
+        ***Check if touching a collectable
+        if so, change score and delete collectable
+        CheckInBounds(x)
+    
+    IsTouchingCollectable(?)
+        ...
+    
+    CheckInBounds(x)
+        if x <= 0
+            x = 0
+
+        if (x + size) >= SCREENSIZEX
+            x = SCREENSIZEX - size
+
+    DrawPlayer()
+        ...
+    
+    Input(var userInputKey)
+        if left
+            velocity = -1 // or whatever speed you deem fit
+        else if Right
+            velocity = 1
+
+Greed
+    final SCREENSIZEX = 1000 //whatever screen size you want
+    final SCREENSIZEY = 800
+    InitDrawing(SCREENSIZEX, SCREENSIZEY)
+    ScoreBoard = new Score
+    player = new Player
+
+    int tick
+
+    game loop
+        Make the background black
+        tick++
+        if tick >= 10
+            tick = 0
+            new Collectable
+    
+    enddrawing()
+        
+
+        
+
+
