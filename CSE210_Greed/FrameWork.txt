@@ -1,5 +1,5 @@
 abs Object
-    abs float velocity
+    abs float speed
     abs int size
     abs var color
     abs float x
@@ -11,7 +11,7 @@ abs Object
 
 
 Collectable : Object
-    float velocity;
+    float speed;
     int size;
     var color;
     float x;
@@ -19,7 +19,7 @@ Collectable : Object
     var type;
 
     Collectable()
-        velocity = 0
+        speed = 0
         size = 10
         color = GetRandomColor()
         x = random(0, SCREENSIZEX)
@@ -30,8 +30,8 @@ Collectable : Object
         else if coinFlip == 1
             type = new Gem;
 
-    Collectable(int v, int s, var c, float posx, float posy, var t) //velocity, size, color, x, y, type of collectable. For creating the object yourself
-        velocity = v
+    Collectable(int v, int s, var c, float posx, float posy, var t) //speed, size, color, x, y, type of collectable. For creating the object yourself
+        speed = v
         size = s
         color = c
         x = posx
@@ -82,21 +82,21 @@ Score
         score += points;
 
 Player : Object
-    float velocity;
+    float speed;
     int size;
     var color;
     float x;
     float y;
 
     Player()
-        velocity = 0
+        speed = 0
         size = 10
         color = RayLib.color.WHITE
         x = SCREENSIZEX / 2
         y = SCREENSIZEY - size
 
     Move Left/Right loop
-        DrawPlayer(velocity)
+        DrawPlayer(speed)
         ***Check if touching a collectable
         if so, change score and delete collectable
         CheckInBounds(x)
@@ -116,9 +116,9 @@ Player : Object
     
     Input(var userInputKey)
         if left
-            velocity = -1 // or whatever speed you deem fit
+            speed = -1 // or whatever speed you deem fit
         else if Right
-            velocity = 1
+            speed = 1
 
 Greed
     final SCREENSIZEX = 1000 //whatever screen size you want
