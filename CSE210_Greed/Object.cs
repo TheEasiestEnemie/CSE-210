@@ -5,10 +5,10 @@ namespace Greed{
     abstract public class Object 
     {
         
-        public abstract int velocity  
+        public abstract int speed  
         {  
-        get;  
-        set;  
+            get;  
+            set;  
         }
 
         public abstract int size
@@ -37,15 +37,13 @@ namespace Greed{
 
         public static Color GetRandomColor()
         {
-            Random RandomInt = new Random();
-            double dr = Math.Round((RandomInt.NextDouble() * 255.0));
-            double dg = Math.Round((RandomInt.NextDouble() * 255.0));
-            double db = Math.Round((RandomInt.NextDouble() * 255.0));
-            int r = Decimal.ToInt32(dr);
-            int g = Decimal.ToInt32(dg);
-            int b = Decimal.ToInt32(db);
+            Random random = new Random();
+            int r = (int)Math.Round((random.NextDouble() * 255.0));
+            int g = (int)Math.Round((random.NextDouble() * 255.0));
+            int b = (int)Math.Round((random.NextDouble() * 255.0));
 
             Color randColor = new Color(r, g, b, 255);
+
             return randColor;
         }
     }
