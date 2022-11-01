@@ -1,4 +1,8 @@
-public class Collectable: Object
+public class Collectable: Obj
 {
-    
+    float speed;
+
+    Collectable() {
+        
+    }
 }
