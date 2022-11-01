@@ -27,6 +27,15 @@ public class Obj
         get;
         set;
     }
+    public Obj() 
+    {
+        speed = 0;
+        size = 10;
+        color = GetRandomColor();
+        x = 0;
+        y = 0;
+    }
+    
     public static Color GetRandomColor()
     {
         Random random = new Random();
