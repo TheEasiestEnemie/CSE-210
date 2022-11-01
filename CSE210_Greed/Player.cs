@@ -1,4 +1,4 @@
-public class Player: Object 
+public class Player: Obj
 {
-
+    private int speed;
 }

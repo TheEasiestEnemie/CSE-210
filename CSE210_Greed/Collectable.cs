@@ -1,8 +1,8 @@
-public class Collectable: Obj
+ public class Collectable: Obj
 {
     float speed;
 
-    Collectable() {
+    public Collectable() {
         
     }
 }

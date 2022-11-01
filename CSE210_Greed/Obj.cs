@@ -1,12 +1,32 @@
 using Raylib_cs;
 
-abstract public class Obj
+public class Obj
 {
-    float speed;
-    int size;
-    Color color;
-    float x;
-    float y;
+    public float speed
+    {
+        get;
+        set;
+    }
+    public int size
+    {
+        get;
+        set;
+    }
+    public Color color
+    {
+        get;
+        set;
+    }
+    public float x
+    {
+        get;
+        set;
+    }
+    public float y
+    {
+        get;
+        set;
+    }
     public static Color GetRandomColor()
     {
         Random random = new Random();
