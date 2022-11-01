@@ -27,6 +27,11 @@ public class Obj
         get;
         set;
     }
+    public Rectangle model
+    {
+        get;
+        set;
+    }
     public Obj() 
     {
         speed = 0;
@@ -35,8 +40,9 @@ public class Obj
         x = 0;
         y = 0;
     }
-    
-    public static Color GetRandomColor()
+    // needs code to make sure that a colored object isn't
+    // the same or similar to the background color.
+    public static Color GetRandomColor() 
     {
         Random random = new Random();
         int r = (int)Math.Round((random.NextDouble() * 255.0));
