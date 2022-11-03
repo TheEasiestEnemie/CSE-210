@@ -27,6 +27,11 @@ public class Obj
         get;
         set;
     }
+    public Rectangle model
+    {
+        get;
+        set;
+    }
     public Obj() 
     {
         speed = 0;
