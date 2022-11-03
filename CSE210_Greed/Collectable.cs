@@ -6,7 +6,9 @@
 
     // This creates an object capable of being collected. 
     // It doesn't know what the collectable is specifically.
-    // create a rock/gem etc object to call this constructor
+    // create a rock/gem etc object to call this constructor.
+    // 
+    // When this is called, the Obj() constructor is called by proxy.
     public Collectable(int screenWidth)
     { 
         Random rand = new Random();
