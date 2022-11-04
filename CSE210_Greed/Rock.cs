@@ -2,19 +2,11 @@ using Raylib_cs;
 using System.Numerics;
 public class Rock: Collectable
 {
-    private int pointValue;
-    new Object model;
     public Rock(int screenWidth) : base(screenWidth)
     {
-        Collectable rock = new Collectable(screenWidth);
         pointValue = -1;
         size = 12;
         model = new Rectangle((int)x, (int)y, size, size);
-    }
-
-    override public int GetPointValue()
-    {
-        return pointValue;
     }
 
     override public void Draw() // All this function does is draw a rock. I know its a lot.

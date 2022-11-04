@@ -14,7 +14,7 @@ static class Greed
         Raylib.SetTargetFPS(60);
 
         ////////////////////// Jack's Segment of code //////////////////////
-        int NUMOFCOLLECTABLES = 2;
+        int NUMOFCOLLECTABLES = 3;
         List<Collectable> collectablesOnScreen = new List<Collectable>();
         List<int> itemsToDelete = new List<int>();
 
@@ -50,12 +50,21 @@ static class Greed
                         collectablesOnScreen.Add(gem);
                         break;
                     }
+                    case 2:
+                    {
+                        var bomb = new Bomb(screenWidth);
+                        collectablesOnScreen.Add(bomb);
+                        break;
+                    }
                 }
             }
             for (int i = 0; i < collectablesOnScreen.Count(); i++) //Makes the falling animation
             {
                 collectablesOnScreen[i].Draw();
-                collectablesOnScreen[i].MoveVertical(true); // write the collision check here when you get to that
+                collectablesOnScreen[i].MoveVertical(true); // if true it moves an object down
+                
+                // write the collision check here when you get to that
+
                 if (collectablesOnScreen[i].IsOffScreen(screenWidth, screenHeight)) // checks if object is offscreen
                 {
                     itemsToDelete.Add(i); // removes said object from the list when it goes out of bounds

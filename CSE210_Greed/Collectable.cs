@@ -3,6 +3,7 @@
     protected float vspeed;
     protected float hspeed;
     protected int TOPVSPEED = 5; // How fast an object can go
+    protected int pointValue;
 
     // This creates an object capable of being collected. 
     // It doesn't know what the collectable is specifically.
@@ -69,9 +70,8 @@
 
     }
 
-    virtual public int GetPointValue()
+    public int GetPointValue()
     {
-        Console.WriteLine("This point value is 0.");
-        return 0;
+        return pointValue;
     }
 }
