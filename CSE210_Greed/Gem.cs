@@ -7,13 +7,17 @@ public class Gem: Collectable
     public Gem(int screenWidth) : base(screenWidth)
     {
         Collectable gem = new Collectable(screenWidth);
-        pointValue = -1;
-        model = new Rectangle((int)gem.x, (int)gem.y, gem.size, gem.size);
+        pointValue = 1;
+        size = 12;
+        model = new Rectangle((int)x, (int)y, size, size);
     }
 
-    public void DrawGem(Object model)
+    override public void Draw()
     {
-        // The x and y for a circle start at the center, not the top left corner
-        Raylib.DrawCircle((int)x + size / 2, (int)y + size / 2, size / 2, color);
+        Raylib.DrawLine((int)x, (int)y + size, (int)x + (size / 2), (int)y, color);
+        Raylib.DrawLine((int)x + (size / 2), (int)y, (int)x + size, (int)y + size, color);
+        Raylib.DrawLine((int)x + size, (int)y + size, (int)x, (int)y + (size / 3),  color);
+        Raylib.DrawLine((int)x, (int)y + (size / 3), (int)x + size, (int)y + (size / 3), color);
+        Raylib.DrawLine((int)x + size, (int)y + (size / 3), (int)x, (int)y + size, color);
     }
 }

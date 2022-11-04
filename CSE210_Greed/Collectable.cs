@@ -2,7 +2,7 @@
 {
     protected float vspeed;
     protected float hspeed;
-    protected float TOPVSPEED = 5; // How fast an object can go
+    protected int TOPVSPEED = 5; // How fast an object can go
 
     // This creates an object capable of being collected. 
     // It doesn't know what the collectable is specifically.
@@ -18,10 +18,11 @@
             x -= size;
         }
 
-        y = 0;
+        y = 2 * -size;
 
         hspeed = 0; // Collectables don't need to move left or right
-        vspeed = (float)rand.NextDouble() * TOPVSPEED + 3.0f; // the 3.0f is the minimum speed
+        vspeed = (float)rand.Next(3, TOPVSPEED + 1); // the 3 is the minimum speed
+        // vspeed = 0;
 
     }
 
@@ -53,7 +54,7 @@
 
     public bool IsOffScreen(int screenWidth, int screenHeight) // checks if an object is off screen
     {
-        if ((x + size > screenWidth) || (y + size > screenHeight))
+        if ((x - size > screenWidth) || (y - size > screenHeight))
         {
             return true;
         }
@@ -61,5 +62,10 @@
         {
             return false;
         }
+    }
+
+    virtual public void Draw()
+    {
+
     }
 }
