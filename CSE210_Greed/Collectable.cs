@@ -68,4 +68,10 @@
     {
 
     }
+
+    virtual public int GetPointValue()
+    {
+        Console.WriteLine("This point value is 0.");
+        return 0;
+    }
 }

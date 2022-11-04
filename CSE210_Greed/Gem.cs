@@ -12,7 +12,11 @@ public class Gem: Collectable
         model = new Rectangle((int)x, (int)y, size, size);
     }
 
-    override public void Draw()
+    override public int GetPointValue()
+    {
+        return pointValue;
+    }
+    override public void Draw() // Draws a 5 point star (not filled in)
     {
         Raylib.DrawLine((int)x, (int)y + size, (int)x + (size / 2), (int)y, color);
         Raylib.DrawLine((int)x + (size / 2), (int)y, (int)x + size, (int)y + size, color);

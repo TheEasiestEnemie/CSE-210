@@ -12,7 +12,12 @@ public class Rock: Collectable
         model = new Rectangle((int)x, (int)y, size, size);
     }
 
-    override public void Draw()
+    override public int GetPointValue()
+    {
+        return pointValue;
+    }
+
+    override public void Draw() // All this function does is draw a rock. I know its a lot.
     {   
         // triangle 1
         Vector2 t1v1 = new Vector2(x + 2 * ((float)size / 3), y + (float)size);
