@@ -37,6 +37,7 @@
         {
             y -= vspeed;
         }
+        model = new Raylib_cs.Rectangle(x, y, size, size);
         return y;
     }
 
@@ -50,6 +51,7 @@
         {
             x -= hspeed;
         }
+        model = new Raylib_cs.Rectangle(x, y, size, size);
         return x;
     }
 

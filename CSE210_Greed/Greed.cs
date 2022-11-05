@@ -79,7 +79,7 @@ static class Greed
                     itemsToDelete.Add(i); // removes said object from the list when it goes out of bounds
                 }
             }
-            for (int i = 0; i < itemsToDelete.Count(); i++) // deletes items out of bounds
+            for (int i = 0; i < itemsToDelete.Count(); i++) // deletes items out of bounds or in contact with the player
             {
                 collectablesOnScreen.RemoveAt(itemsToDelete[i]); // deletes the obj at the index number stored in itemstodelete
             }   
