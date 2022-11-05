@@ -14,7 +14,7 @@ static class Greed
         Raylib.SetTargetFPS(60);
 
         ////////////////////// Jack's Segment of code //////////////////////
-        int NUMOFCOLLECTABLES = 3;
+        int NUMOFCOLLECTABLES = 4;
         List<Collectable> collectablesOnScreen = new List<Collectable>();
         List<int> itemsToDelete = new List<int>();
 
@@ -54,6 +54,12 @@ static class Greed
                     {
                         var bomb = new Bomb(screenWidth);
                         collectablesOnScreen.Add(bomb);
+                        break;
+                    }
+                    case 3:
+                    {
+                        var largeGem = new LargeGem(screenWidth);
+                        collectablesOnScreen.Add(largeGem);
                         break;
                     }
                 }
