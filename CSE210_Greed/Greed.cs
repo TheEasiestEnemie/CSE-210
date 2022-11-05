@@ -18,7 +18,7 @@ static class Greed
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Color.BLACK);
             player.drawplayer(player, player.model);
-            player.Moveplayer();
+            player.Moveplayer(ScreenWidth);
 
             Raylib.EndDrawing();
         }
