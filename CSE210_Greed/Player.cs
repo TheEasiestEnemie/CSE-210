@@ -5,7 +5,7 @@ public class Player: Obj
     public Player(int ScreenHeight, int ScreenWidth)
     {
         
-        speed = 10;
+        speed = 4;
         size = 15;
         color = Raylib_cs.Color.WHITE;
         x = ScreenWidth / 2;

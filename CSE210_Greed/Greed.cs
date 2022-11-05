@@ -6,10 +6,10 @@ static class Greed
 {
     public static void Main()
     {
-          
         var screenHeight = 800;
         var screenWidth = 1000;
         Player player = new Player(screenHeight, screenWidth);
+        Score score = new Score();
         Raylib.InitWindow(screenWidth, screenHeight, "Greed");
         Raylib.SetTargetFPS(60);
 
@@ -26,8 +26,10 @@ static class Greed
         {
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Color.BLACK);
+            score.DisplayScore(score);
             player.drawplayer(player, player.model);
-            player.Moveplayer(ScreenWidth);
+            player.Moveplayer(screenWidth);
+            
 
             ////////////////////////// Jacks portion of Code for the game ///////////////////////////
 
@@ -62,8 +64,9 @@ static class Greed
             {
                 collectablesOnScreen[i].Draw();
                 collectablesOnScreen[i].MoveVertical(true); // if true it moves an object down
-                
+                score.ChangeScore(score, collectablesOnScreen[i], player);
                 // write the collision check here when you get to that
+                
 
                 if (collectablesOnScreen[i].IsOffScreen(screenWidth, screenHeight)) // checks if object is offscreen
                 {
