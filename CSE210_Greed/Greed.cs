@@ -71,6 +71,10 @@ static class Greed
                 collectablesOnScreen[i].Draw();
                 collectablesOnScreen[i].MoveVertical(true); // if true it moves an object down
                 score.ChangeScore(score, collectablesOnScreen[i], player);
+                if (Raylib.CheckCollisionRecs(player.model, collectablesOnScreen[i].model))
+                {
+                    itemsToDelete.Add(i);
+                }
                 // write the collision check here when you get to that
                 
 

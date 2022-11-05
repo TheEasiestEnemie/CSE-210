@@ -21,11 +21,11 @@ public class Score
 
     public void ChangeScore(Score score, Collectable collectable, Player player)
     {
-       
         if (Raylib.CheckCollisionRecs(player.model, collectable.model))
         {
             score.score += collectable.GetPointValue();
         }
        
     }
+
 }
