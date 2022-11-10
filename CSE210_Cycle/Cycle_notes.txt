@@ -1,6 +1,9 @@
-classess:
+classes:
 
 Player:
     P1
     P2
 
+Snake:
+    Body_segment:
+    Head
