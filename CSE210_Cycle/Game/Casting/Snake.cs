@@ -17,7 +17,7 @@ namespace Unit05.Game.Casting
         /// </summary>
         public Snake(Color color, Vector2 startingPosition)
         {
-            this.SetColor(color);
+            SetColor(color);
             PrepareBody(startingPosition);
         }
 
@@ -114,7 +114,7 @@ namespace Unit05.Game.Casting
                 segment.SetPosition(position);
                 segment.SetVelocity(velocity);
                 segment.SetText(text);
-                segment.SetColor(color);
+                segment.SetColor(GetColor());
                 segments.Add(segment);
             }
         }

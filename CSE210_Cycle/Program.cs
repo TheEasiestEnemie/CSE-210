@@ -21,7 +21,8 @@ namespace Unit05
             // create the cast
             Cast cast = new Cast();
             cast.AddActor("food", new Food());
-            cast.AddActor("snake", new Snake(Constants.YELLOW, new System.Numerics.Vector2(Constants.CELL_SIZE * 10, Constants.CELL_SIZE * 10)));
+            cast.AddActor("snake", new Snake(Constants.WHITE, new System.Numerics.Vector2(Constants.CELL_SIZE * 10, Constants.CELL_SIZE * 10)));
+            cast.AddActor("snake2", new Snake(Constants.YELLOW, new System.Numerics.Vector2(5 * Constants.CELL_SIZE * 10, Constants.CELL_SIZE * 10)));
             cast.AddActor("score", new Score());
 
             // create the services
