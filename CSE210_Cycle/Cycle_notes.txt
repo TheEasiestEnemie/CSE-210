@@ -1,6 +1,22 @@
-classess:
+CYCLE FRAMEWORK
+
+interface Draw []
 
 Player:
-    P1
-    P2
+    MoveDown(bool)
+    MoveLeft(bool)
+
+Snake:
+    var speed
+    var public color
+    var lastKnownPosition
+    BodySegment:
+    Head:
+
+Cycle:
+
+GameOver:
+
+/////////////////// OBSOLETE ///////////////////////
+
 
