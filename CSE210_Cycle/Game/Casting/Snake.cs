@@ -1,4 +1,4 @@
-using System;
+using System.Numerics;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,13 +15,10 @@ namespace Unit05.Game.Casting
         /// <summary>
         /// Constructs a new instance of a Snake.
         /// </summary>
-        public Snake()
+        public Snake(Color color, Vector2 startingPosition)
         {
-            PrepareBody();
-        }
-        public Snake(int x, int y)
-        {
-            PrepareBody(x, y);
+            this.SetColor(color);
+            PrepareBody(startingPosition);
         }
 
         /// <summary>
@@ -102,28 +99,11 @@ namespace Unit05.Game.Casting
         /// <summary>
         /// Prepares the snake body for moving.
         /// </summary>
-        private void PrepareBody()
+        private void PrepareBody(Vector2 startingPosition)
         {
-            int x = Constants.MAX_X / 2;
-            int y = Constants.MAX_Y / 2;
+            int x = (int)startingPosition.X;
+            int y = (int)startingPosition.Y;
 
-            for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
-            {
-                Point position = new Point(x, y + i * Constants.CELL_SIZE);
-                Point velocity = new Point(0, -1 * Constants.CELL_SIZE);
-                string text = i == 0 ? "8" : "#";
-                Color color = i == 0 ? Constants.YELLOW : Constants.GREEN;
-
-                Actor segment = new Actor();
-                segment.SetPosition(position);
-                segment.SetVelocity(velocity);
-                segment.SetText(text);
-                segment.SetColor(color);
-                segments.Add(segment);
-            }
-        }
-        private void PrepareBody(int x, int y)
-        {
             for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
             {
                 Point position = new Point(x, y + i * Constants.CELL_SIZE);
