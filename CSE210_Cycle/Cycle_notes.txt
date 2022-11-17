@@ -20,3 +20,6 @@ GameOver:
 /////////////////// OBSOLETE ///////////////////////
 
 
+Snake:
+    Body_segment:
+    Head
