@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\13857\\OneDrive\\Desktop\\CSE 210\\CSE210_Cycle\\Unit05.csproj": {}
+    "C:\\Users\\gpoul\\Documents\\Git\\CSE-210\\CSE210_Cycle\\Unit05.csproj": {}
   },
   "projects": {
-    "C:\\Users\\13857\\OneDrive\\Desktop\\CSE 210\\CSE210_Cycle\\Unit05.csproj": {
+    "C:\\Users\\gpoul\\Documents\\Git\\CSE-210\\CSE210_Cycle\\Unit05.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\13857\\OneDrive\\Desktop\\CSE 210\\CSE210_Cycle\\Unit05.csproj",
+        "projectUniqueName": "C:\\Users\\gpoul\\Documents\\Git\\CSE-210\\CSE210_Cycle\\Unit05.csproj",
         "projectName": "Unit05",
-        "projectPath": "C:\\Users\\13857\\OneDrive\\Desktop\\CSE 210\\CSE210_Cycle\\Unit05.csproj",
-        "packagesPath": "C:\\Users\\13857\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\13857\\OneDrive\\Desktop\\CSE 210\\CSE210_Cycle\\obj\\",
+        "projectPath": "C:\\Users\\gpoul\\Documents\\Git\\CSE-210\\CSE210_Cycle\\Unit05.csproj",
+        "packagesPath": "C:\\Users\\gpoul\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gpoul\\Documents\\Git\\CSE-210\\CSE210_Cycle\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\13857\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\gpoul\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

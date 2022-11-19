@@ -16,7 +16,10 @@ namespace Unit05.Game.Scripting
     /// </summary>
     public class HandleCollisionsAction : Action
     {
-        private bool isGameOver = false;
+        private bool isGameOver1 = false;
+        private bool isGameOver2 = false;
+
+        private bool isGameOver3 = false;
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -28,7 +31,7 @@ namespace Unit05.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            if (isGameOver == false)
+            if (isGameOver1 == false && isGameOver2 == false && isGameOver3 == false)
             {
                 HandleFoodCollisions(cast);
                 HandleSegmentCollisions(cast);
@@ -62,24 +65,58 @@ namespace Unit05.Game.Scripting
         private void HandleSegmentCollisions(Cast cast)
         {
             Snake snake = (Snake)cast.GetFirstActor("snake");
+            Snake snake2 = (Snake)cast.GetFirstActor("snake2");
             Actor head = snake.GetHead();
+            Actor head2 = snake2.GetHead();
             List<Actor> body = snake.GetBody();
+            List<Actor> body2 = snake2.GetBody();
 
             foreach (Actor segment in body)
             {
-                if (segment.GetPosition().Equals(head.GetPosition()))
+                if (head.GetPosition().Equals(head2.GetPosition()))
                 {
-                    isGameOver = true;
+                    isGameOver3 = true;
+                }
+                else if (segment.GetPosition().Equals(head.GetPosition()))
+                {
+                    isGameOver1 = true;
+                }
+                else if (segment.GetPosition().Equals(head2.GetPosition()))
+                {
+                    isGameOver2 = true;
+                }
+                
+            }
+            
+            foreach (Actor segment2 in body2)
+            {
+                if (head.GetPosition().Equals(head2.GetPosition()))
+                {
+                    isGameOver3 = true;
+                }
+                else if (segment2.GetPosition().Equals(head2.GetPosition()))
+                {
+                    isGameOver2 = true;
+                }
+                else if (segment2.GetPosition().Equals(head.GetPosition()))
+                {
+                    isGameOver1 = true;
                 }
             }
+
+            
         }
 
         private void HandleGameOver(Cast cast)
         {
-            if (isGameOver == true)
+            if (isGameOver1 == true || isGameOver2 == true || isGameOver3 == true)
             {
                 Snake snake = (Snake)cast.GetFirstActor("snake");
+                Snake snake2 = (Snake)cast.GetFirstActor("snake2");
+                Actor head = snake.GetHead();
+                Actor head2 = snake2.GetHead();
                 List<Actor> segments = snake.GetSegments();
+                List<Actor> segments2 = snake2.GetSegments();
                 Food food = (Food)cast.GetFirstActor("food");
 
                 // create a "game over" message
@@ -93,10 +130,35 @@ namespace Unit05.Game.Scripting
                 cast.AddActor("messages", message);
 
                 // make everything white
-                foreach (Actor segment in segments)
+                
+                if (isGameOver1)
                 {
-                    segment.SetColor(Constants.WHITE);
+                    foreach (Actor segment in segments)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
+                
                 }
+
+                else if (isGameOver2)
+                {
+                    foreach (Actor segment in segments2)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
+                }
+                else if (isGameOver3)
+                {
+                    foreach (Actor segment in segments2)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
+                    foreach (Actor segment in segments)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
+                }
+
                 food.SetColor(Constants.WHITE);
             }
         }
