@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using Unit05.Game.Casting;
+using System;
+using Unit05.Game;
 
 
 namespace Unit05.Game.Scripting
@@ -39,11 +41,23 @@ namespace Unit05.Game.Scripting
         public void Execute(Cast cast, Script script)
         {
             List<Actor> actors = cast.GetAllActors();
-            
+            int noChance = (int)Constants.TAIL_GROWTH_RATE.X;
+            int yesChance = (int)Constants.TAIL_GROWTH_RATE.Y;
             foreach (Actor actor in actors)
             {
+                if (actor is Snake) 
+                {
+                    Random r = new Random();
+                    int determiner = r.Next(noChance, yesChance);
+
+                    if (determiner >= 0)
+                    {
+                        actor.GrowTail(1);
+                    }
+                }
                 actor.MoveNext();
             }
+
         }
     }
 }

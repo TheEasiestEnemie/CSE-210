@@ -1,6 +1,5 @@
-using System;
-using Microsoft.VisualBasic;
 using Unit05.Game.Casting;
+using System.Numerics;
 
 namespace Unit05.Game
 {
@@ -17,11 +16,11 @@ namespace Unit05.Game
         public static int CELL_SIZE = 15;
         public static int MAX_X = 900;
         public static int MAX_Y = 600;
-        public static int FRAME_RATE = 5;
+        public static int FRAME_RATE = 15;
         public static int FONT_SIZE = 15;
         public static string CAPTION = "Snake";
         public static int SNAKE_LENGTH = 8;
-
+        public static Vector2 TAIL_GROWTH_RATE = new Vector2(-100, 5); // these are odds of growing a new tail segment. if the number is negative, it doesn't grow a new segment.
         public static Color RED = new Color(255, 0, 0);
         public static Color WHITE = new Color(255, 255, 255);
         public static Color YELLOW = new Color(255, 255, 0);

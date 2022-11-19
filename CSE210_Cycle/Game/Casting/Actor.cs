@@ -83,6 +83,15 @@ namespace Unit05.Game.Casting
         }
 
         /// <summary>
+        /// Grows the snake's tail by the given number of segments.
+        /// </summary>
+        /// <param name="numberOfSegments">The number of segments to grow.</param>
+        public virtual void GrowTail(int numberOfSegments)
+        {
+            
+        }
+
+        /// <summary>
         /// Sets the actor's color to the given value.
         /// </summary>
         /// <param name="color">The given color.</param>

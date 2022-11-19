@@ -33,7 +33,7 @@ static class Greed
 
             ////////////////////////// Jacks portion of Code for the game ///////////////////////////
 
-            if (tick % 20 == 0) // Adds a random collectable every time this statement runs
+            if (tick % 5 == 0) // Adds a random collectable every time this statement runs
             {
 
                 Random rand = new Random();
