@@ -1,0 +1,23 @@
+classes:
+    (Jack)PlayerTank:(Obj)
+    (Garrett)Obj
+    (Garrett)Enemy:(Obj)
+        fuct(move, shoot (virtual))
+        range
+        speed
+        generic 
+    (Jack)bullet:(Obj)
+    
+
+folders:
+    Casting
+    Services:
+        (Garrett)keyboardServices
+        (Garrett)MouseServices:
+    Scripting:
+        (Jack)Collisions:
+            Bounds
+    Images
+            
+    
+game:
