@@ -1,23 +1,38 @@
 classes:
     (Jack)PlayerTank:(Obj)
+        
     (Garrett)Obj
+        float velocity
+        Vector2 position
+        float sizeX
+        float sizeY
+        Circle model
+
+        Obj() {}
+
+        Obj(x, y, sizeX, sizeY) {}
+
+
     (Garrett)Enemy:(Obj)
-        fuct(move, shoot (virtual))
+        (MoveNext, Shoot (virtual))
         range
         speed
         generic 
-    (Jack)bullet:(Obj)
+    (Jack)bullet:(Obj) {
+        MoveNext(currentPosition, slope) {}
+    }
     
 
 folders:
-    Casting
+    Casting:
     Services:
         (Garrett)keyboardServices
-        (Garrett)MouseServices:
+        (Garrett)MouseServices
+        VideoServices
     Scripting:
-        (Jack)Collisions:
+        Action
+        (Jack)CheckEnemyPlayerCollisions:
             Bounds
-    Images
-            
-    
-game:
+    Director:
+    Images:
+        Stores all images used in the game
