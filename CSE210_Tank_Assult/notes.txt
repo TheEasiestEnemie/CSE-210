@@ -1,7 +1,6 @@
 classes:
-    (Jack)PlayerTank:(Obj)
         
-    (Garrett)Obj
+    (Garrett)Obj: {
         float velocity
         Vector2 position
         float sizeX
@@ -11,14 +10,19 @@ classes:
         Obj() {}
 
         Obj(x, y, sizeX, sizeY) {}
+    }
 
+    (Jack)PlayerTank: Obj {}
 
-    (Garrett)Enemy:(Obj)
+    (Garrett)Enemy: Obj {
         (MoveNext, Shoot (virtual))
-        range
-        speed
-        generic 
-    (Jack)bullet:(Obj) {
+    }
+
+    (Garrett) Range: Enemy {}
+    (Garrett) Speed: Enemy {}
+    (Garrett) Generic: Enemy {}
+
+    (Jack)bullet:Obj {
         MoveNext(currentPosition, slope) {}
     }
     
@@ -31,8 +35,13 @@ folders:
         VideoServices
     Scripting:
         Action
-        (Jack)CheckEnemyPlayerCollisions:
-            Bounds
+        (Jack)CheckPlayerCollisionsAction: Action
+            (Including bounds)
+        (Jack)CheckBulletCollisionsAction: Action
+        (Jack)ControlPlayerAction: Action
+        (Jack)MovePlayerAction: Action
+        (Jack)MoveEnemiesAction: Action
+        (Jack)MoveBulletsAction: Action
     Director:
     Images:
         Stores all images used in the game
