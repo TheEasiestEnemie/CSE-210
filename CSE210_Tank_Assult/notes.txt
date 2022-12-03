@@ -1,6 +1,7 @@
 classes:
         
     (Garrett)Obj: {
+        // Encapsulation
         float velocity
         Vector2 position
         float sizeX
@@ -10,14 +11,19 @@ classes:
         Obj() {}
 
         Obj(x, y, sizeX, sizeY) {}
+
+        virtual GetSlope() {} // Abstraction/Polymorphism/Encapsulation
     }
+
+    (Jack)Line: {} // needed for alignment
 
     (Jack)PlayerTank: Obj {}
 
     (Garrett)Enemy: Obj {
-        (MoveNext, Shoot (virtual))
+        (MoveNext, Shoot (virtual)) // Polymorphism
     }
 
+    // Inheritance
     (Garrett) Range: Enemy {}
     (Garrett) Speed: Enemy {}
     (Garrett) Generic: Enemy {}
@@ -30,10 +36,12 @@ classes:
 folders:
     Casting:
     Services:
-        (Garrett)keyboardServices
-        (Garrett)MouseServices
-        VideoServices
+        // Abstraction
+        (Garrett)keyboardService
+        (Garrett)MouseService 
+        VideoService
     Scripting:
+        // Interfacing
         Action
         (Jack)CheckPlayerCollisionsAction: Action
             (Including bounds)
