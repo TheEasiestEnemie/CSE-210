@@ -1,23 +1,55 @@
 classes:
-    (Jack)PlayerTank:(Obj)
-    (Garrett)Obj
-    (Garrett)Enemy:(Obj)
-        fuct(move, shoot (virtual))
-    (Garrett)range
-    (Garrett)speed
-    (Garrett)generic 
-    (Jack)bullet:(Obj)
+        
+    (Garrett)Obj: {
+        // Encapsulation
+        float velocity
+        Vector2 position
+        float sizeX
+        float sizeY
+        Circle model
+
+        Obj() {}
+
+        Obj(x, y, sizeX, sizeY) {}
+
+        virtual GetSlope() {} // Abstraction/Polymorphism/Encapsulation
+    }
+
+    (Jack)Line: {} // needed for alignment
+
+    (Jack)PlayerTank: Obj {}
+
+    (Garrett)Enemy: Obj {
+        (MoveNext, Shoot (virtual)) // Polymorphism
+    }
+
+    // Inheritance
+    (Garrett) Range: Enemy {}
+    (Garrett) Speed: Enemy {}
+    (Garrett) Generic: Enemy {}
+
+    (Jack)bullet:Obj {
+        MoveNext(currentPosition, slope) {}
+    }
     
 
 folders:
-    Casting
+    Casting:
     Services:
-        (Jack)keyboardServices:
-        (Garrett)MouseServices:
+        // Abstraction
+        (Garrett)keyboardService
+        (Garrett)MouseService 
+        VideoService
     Scripting:
-        (Jack)Collisions:
-            Bounds
-    Images
-            
-    
-game:
+        // Interfacing
+        Action
+        (Jack)CheckPlayerCollisionsAction: Action
+            (Including bounds)
+        (Jack)CheckBulletCollisionsAction: Action
+        (Jack)ControlPlayerAction: Action
+        (Jack)MovePlayerAction: Action
+        (Jack)MoveEnemiesAction: Action
+        (Jack)MoveBulletsAction: Action
+    Director:
+    Images:
+        Stores all images used in the game
