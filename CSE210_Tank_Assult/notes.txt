@@ -3,16 +3,16 @@ classes:
     (Garrett)Obj
     (Garrett)Enemy:(Obj)
         fuct(move, shoot (virtual))
-        range
-        speed
-        generic 
+    (Garrett)range
+    (Garrett)speed
+    (Garrett)generic 
     (Jack)bullet:(Obj)
     
 
 folders:
     Casting
     Services:
-        (Garrett)keyboardServices
+        (Jack)keyboardServices:
         (Garrett)MouseServices:
     Scripting:
         (Jack)Collisions:
