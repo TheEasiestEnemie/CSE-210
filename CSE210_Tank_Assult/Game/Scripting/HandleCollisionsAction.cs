@@ -16,9 +16,7 @@ namespace CSE210_Assult.Game.Scripting
     /// </summary>
     public class HandleCollisionsAction : Action
     {
-        private bool isGameOver1 = false;
-        private bool isGameOver2 = false;
-        private bool isGameOver3 = false;
+        private bool isGameOver = false;
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -30,92 +28,16 @@ namespace CSE210_Assult.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            if (isGameOver1 == false && isGameOver2 == false && isGameOver3 == false)
+            if (!isGameOver)
             {
-                HandleFoodCollisions(cast);
-                HandleSegmentCollisions(cast);
                 HandleGameOver(cast);
             }
         }
 
-        /// <summary>
-        /// Updates the score nd moves the food if the snake collides with it.
-        /// </summary>
-        /// <param name="cast">The cast of actors.</param>
-        private void HandleFoodCollisions(Cast cast)
-        {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            Score score = (Score)cast.GetFirstActor("score");
-            Food food = (Food)cast.GetFirstActor("food");
-            
-            if (snake.GetHead().GetPosition().Equals(food.GetPosition()))
-            {
-                int points = food.GetPoints();
-                snake.GrowTail(points);
-                score.AddPoints(points);
-                food.Reset();
-            }
-        }
-
-        /// <summary>
-        /// Sets the game over flag if the snake collides with one of its segments.
-        /// </summary>
-        /// <param name="cast">The cast of actors.</param>
-        private void HandleSegmentCollisions(Cast cast)
-        {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            Snake snake2 = (Snake)cast.GetFirstActor("snake2");
-            Actor head = snake.GetHead();
-            Actor head2 = snake2.GetHead();
-            List<Actor> body = snake.GetBody();
-            List<Actor> body2 = snake2.GetBody();
-
-            foreach (Actor segment in body)
-            {
-                if (head.GetPosition().Equals(head2.GetPosition()))
-                {
-                    isGameOver3 = true;
-                }
-                else if (segment.GetPosition().Equals(head.GetPosition()))
-                {
-                    isGameOver1 = true;
-                }
-                else if (segment.GetPosition().Equals(head2.GetPosition()))
-                {
-                    isGameOver2 = true;
-                }
-                
-            }
-            
-            foreach (Actor segment2 in body2)
-            {
-                if (head.GetPosition().Equals(head2.GetPosition()))
-                {
-                    isGameOver3 = true;
-                }
-                else if (segment2.GetPosition().Equals(head2.GetPosition()))
-                {
-                    isGameOver2 = true;
-                }
-                else if (segment2.GetPosition().Equals(head.GetPosition()))
-                {
-                    isGameOver1 = true;
-                }
-            }
-
-            
-        }
-
         private void HandleGameOver(Cast cast)
         {
-            if (isGameOver1 == true || isGameOver2 == true || isGameOver3 == true)
+            if (isGameOver)
             {
-                Snake snake = (Snake)cast.GetFirstActor("snake");
-                Snake snake2 = (Snake)cast.GetFirstActor("snake2");
-                Actor head = snake.GetHead();
-                Actor head2 = snake2.GetHead();
-                List<Actor> segments = snake.GetSegments();
-                List<Actor> segments2 = snake2.GetSegments();
                 Food food = (Food)cast.GetFirstActor("food");
 
                 // create a "game over" message
