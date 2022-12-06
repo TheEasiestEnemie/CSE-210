@@ -13,15 +13,17 @@ namespace CSE210_Assult.Game.Scripting
     public class ControlActorsAction : Action
     {
         private KeyboardService keyboardService;
+        private MouseServives mouseServices;
         private Point direction = new Point(0, -Constants.CELL_SIZE);
         private Point direction2 = new Point(0, -Constants.CELL_SIZE);
 
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
         /// </summary>
-        public ControlActorsAction(KeyboardService keyboardService)
+        public ControlActorsAction(KeyboardService keyboardService, MouseServives mouseServices)
         {
             this.keyboardService = keyboardService;
+            this.mouseServices = mouseServices;
         }
 
         /// <inheritdoc/>
@@ -74,11 +76,6 @@ namespace CSE210_Assult.Game.Scripting
             {
                 direction2 = new Point(0, Constants.CELL_SIZE);
             }
-
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            Snake snake2 = (Snake)cast.GetFirstActor("snake2");
-            snake.TurnHead(direction);
-            snake2.TurnHead(direction2);
         }
     }
 }
