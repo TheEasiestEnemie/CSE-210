@@ -5,6 +5,8 @@ public static class VectorCalculation {
         Vector2 directionVector;
         directionVector.X = endPoint.X - startPoint.X;
         directionVector.Y = endPoint.Y - startPoint.Y;
+        directionVector.X /= (float)GetVectorMagnitude(directionVector);
+        directionVector.Y /= (float)GetVectorMagnitude(directionVector);
         return directionVector;
     }
 
