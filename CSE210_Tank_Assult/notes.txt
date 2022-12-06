@@ -4,18 +4,17 @@ classes:
         // Encapsulation
         float velocity
         Vector2 position
-        float sizeX
-        float sizeY
+        float radius
         Circle model
 
         Obj() {}
 
-        Obj(x, y, sizeX, sizeY) {}
+        Obj(x, y, radius) {}
 
     }
 
-    (Jack)Line: { // needed for alignment
-        virtual GetSlope() {} // Abstraction/Polymorphism/Encapsulation
+    (Jack) VectorCalculation: { // needed for alignment
+        vector stuff
     } 
 
     (Jack)PlayerTank: Obj {}
@@ -30,7 +29,7 @@ classes:
     (Garrett) Generic: Enemy {}
 
     (Jack)bullet:Obj {
-        MoveNext(currentPosition, slope) {}
+        MoveNext(currentPosition, Point to move to) {}
     }
     
 

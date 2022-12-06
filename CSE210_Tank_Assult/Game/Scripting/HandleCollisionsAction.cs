@@ -18,7 +18,6 @@ namespace CSE210_Assult.Game.Scripting
     {
         private bool isGameOver1 = false;
         private bool isGameOver2 = false;
-
         private bool isGameOver3 = false;
 
         /// <summary>
