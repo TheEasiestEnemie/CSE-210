@@ -23,7 +23,7 @@ public class Obj
         get;
         set;
     }
-    public Rectangle model
+    public Circle model
     {
         get;
         set;

@@ -12,10 +12,11 @@ classes:
 
         Obj(x, y, sizeX, sizeY) {}
 
-        virtual GetSlope() {} // Abstraction/Polymorphism/Encapsulation
     }
 
-    (Jack)Line: {} // needed for alignment
+    (Jack)Line: { // needed for alignment
+        virtual GetSlope() {} // Abstraction/Polymorphism/Encapsulation
+    } 
 
     (Jack)PlayerTank: Obj {}
 

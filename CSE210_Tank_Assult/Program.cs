@@ -1,11 +1,11 @@
-﻿using Unit05.Game.Casting;
-using Unit05.Game.Directing;
-using Unit05.Game.Scripting;
-using Unit05.Game.Services;
-using Unit05.Game;
+﻿using CSE210_Assult.Game.Casting;
+using CSE210_Assult.Game.Directing;
+using CSE210_Assult.Game.Scripting;
+using CSE210_Assult.Game.Services;
+using CSE210_Assult.Game;
 
 
-namespace Unit05
+namespace CSE210_Assult
 {
     /// <summary>
     /// The program's entry point.

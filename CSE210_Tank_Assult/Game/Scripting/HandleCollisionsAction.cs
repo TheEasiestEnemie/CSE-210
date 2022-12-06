@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Unit05.Game.Casting;
-using Unit05.Game.Services;
+using CSE210_Assult.Game.Casting;
+using CSE210_Assult.Game.Services;
 
 
-namespace Unit05.Game.Scripting
+namespace CSE210_Assult.Game.Scripting
 {
     /// <summary>
     /// <para>An update action that handles interactions between the actors.</para>
