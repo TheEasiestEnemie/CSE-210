@@ -1,6 +1,7 @@
 using Raylib_cs;
 using System.Numerics;
 using CSE210_Assult.Game.Casting;
+using CSE210_Assult.Game.Services;
 
 namespace CSE210_Assult.Game.Casting
 {
@@ -42,6 +43,13 @@ namespace CSE210_Assult.Game.Casting
             position = new Vector2(x, y);
         }
 
-        
+        public override void DrawImage()
+        {
+            Vector2 mouseVector = VectorCalculation.GetDirectionVector(position, MouseServices.ReturnMousePosition());
+            double angle = VectorCalculation.GetAngle(pointer, mouseVector);
+            rotationAngle += angle;
+            Raylib.DrawTextureEx(texture, position, (float)rotationAngle, 1.0f, new Raylib_cs.Color());
+            pointer = new Vector2(mouseVector.X, mouseVector.Y);
+        }
     }
 }
