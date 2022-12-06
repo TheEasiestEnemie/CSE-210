@@ -1,4 +1,5 @@
 using System;
+using Raylib_cs;
 using System.Numerics;
 
 
@@ -15,10 +16,7 @@ namespace CSE210_Assult.Game.Casting
     {
         protected double velocity;
         protected double radius;
-
         protected Vector2 position;
-        protected Circle model;
-
         protected Vector2 pointer;
         protected Color color = Constants.WHITE;
 
@@ -28,7 +26,6 @@ namespace CSE210_Assult.Game.Casting
             radius = 10;
             position = new Vector2(0, 0);
             pointer = VectorCalculation.GetDirectionVector(position, new Vector2(1, 0));
-            model = new Circle(position.X, position.Y, radius);
         }
 
 
@@ -45,25 +42,16 @@ namespace CSE210_Assult.Game.Casting
         /// Gets the actor's position.
         /// </summary>
         /// <returns>The position.</returns>
-        public Point GetPosition()
+        public Vector2 GetPosition()
         {
             return position;
-        }
-
-        /// <summary>
-        /// Gets the actor's text.
-        /// </summary>
-        /// <returns>The text.</returns>
-        public string GetText()
-        {
-            return text;
         }
 
         /// <summary>
         /// Gets the actor's current velocity.
         /// </summary>
         /// <returns>The velocity.</returns>
-        public Point GetVelocity()
+        public double GetVelocity()
         {
             return velocity;
         }
@@ -82,50 +70,11 @@ namespace CSE210_Assult.Game.Casting
         }
 
         /// <summary>
-        /// Grows the snake's tail by the given number of segments.
-        /// </summary>
-        /// <param name="numberOfSegments">The number of segments to grow.</param>
-        public virtual void GrowTail(int numberOfSegments)
-        {
-            
-        }
-
-        /// <summary>
-        /// Sets the actor's color to the given value.
-        /// </summary>
-        /// <param name="color">The given color.</param>
-        /// <exception cref="ArgumentException">When color is null.</exception>
-        public void SetColor(Color color)
-        {
-            if (color == null)
-            {
-                throw new ArgumentException("color can't be null");
-            }
-            this.color = color;
-        }
-
-        /// <summary>
-        /// Sets the actor's font size to the given value.
-        /// </summary>
-        /// <param name="fontSize">The given font size.</param>
-        /// <exception cref="ArgumentException">
-        /// When font size is less than or equal to zero.
-        /// </exception>
-        public void SetFontSize(int fontSize)
-        {
-            if (fontSize <= 0)
-            {
-                throw new ArgumentException("fontSize must be greater than zero");
-            }
-            this.fontSize = fontSize;
-        }
-
-        /// <summary>
         /// Sets the actor's position to the given value.
         /// </summary>
         /// <param name="position">The given position.</param>
         /// <exception cref="ArgumentException">When position is null.</exception>
-        public void SetPosition(Point position)
+        public void SetPosition(Vector2 position)
         {
             if (position == null)
             {
@@ -135,25 +84,11 @@ namespace CSE210_Assult.Game.Casting
         }
 
         /// <summary>
-        /// Sets the actor's text to the given value.
-        /// </summary>
-        /// <param name="text">The given text.</param>
-        /// <exception cref="ArgumentException">When text is null.</exception>
-        public void SetText(string text)
-        {
-            if (text == null)
-            {
-                throw new ArgumentException("text can't be null");
-            }
-            this.text = text;
-        }
-
-        /// <summary>
         /// Sets the actor's velocity to the given value.
         /// </summary>
         /// <param name="velocity">The given velocity.</param>
         /// <exception cref="ArgumentException">When velocity is null.</exception>
-        public void SetVelocity(Point velocity)
+        public void SetVelocity(double velocity)
         {
             if (velocity == null)
             {
@@ -161,6 +96,5 @@ namespace CSE210_Assult.Game.Casting
             }
             this.velocity = velocity;
         }
-
     }
 }

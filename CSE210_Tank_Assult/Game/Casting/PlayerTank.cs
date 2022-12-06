@@ -36,5 +36,7 @@ namespace CSE210_Assult.Game.Casting
             }
             position = new Vector2(x, y);
         }
+
+        
     }
 }
