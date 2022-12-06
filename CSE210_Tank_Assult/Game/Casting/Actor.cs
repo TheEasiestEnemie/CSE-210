@@ -1,4 +1,5 @@
 using System;
+using System.Numerics;
 
 
 namespace CSE210_Assult.Game.Casting
@@ -12,18 +13,24 @@ namespace CSE210_Assult.Game.Casting
     /// </summary>
     public class Actor
     {
-        private string text = "";
-        private int fontSize = 15;
-        private Color color = Constants.WHITE;
-        private Point position = new Point(0, 0);
-        private Point velocity = new Point(0, 0);
+        protected double velocity;
+        protected double radius;
 
-        /// <summary>
-        /// Constructs a new instance of Actor.
-        /// </summary>
-        public Actor()
+        protected Vector2 position;
+        protected Circle model;
+
+        protected Vector2 pointer;
+        protected Color color = Constants.WHITE;
+
+        public Actor() 
         {
+            velocity = 0;
+            radius = 10;
+            position = new Vector2(0, 0);
+            pointer = VectorCalculation.GetDirectionVector(position, new Vector2(1, 0));
+            model = new Circle(position.X, position.Y, radius);
         }
+
 
         /// <summary>
         /// Gets the actor's color.
@@ -32,15 +39,6 @@ namespace CSE210_Assult.Game.Casting
         public Color GetColor()
         {
             return color;
-        }
-
-        /// <summary>
-        /// Gets the actor's font size.
-        /// </summary>
-        /// <returns>The font size.</returns>
-        public int GetFontSize()
-        {
-            return fontSize;
         }
 
         /// <summary>
@@ -77,9 +75,10 @@ namespace CSE210_Assult.Game.Casting
         /// </summary>
         public virtual void MoveNext()
         {
-            int x = ((position.GetX() + velocity.GetX()) + Constants.MAX_X) % Constants.MAX_X;
-            int y = ((position.GetY() + velocity.GetY()) + Constants.MAX_Y) % Constants.MAX_Y;
-            position = new Point(x, y);
+            int x = (int)(position.X + velocity * pointer.X);
+            int y = (int)(position.Y + velocity * pointer.Y);
+            
+            position = new Vector2(x, y);
         }
 
         /// <summary>

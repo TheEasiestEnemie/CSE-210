@@ -20,10 +20,7 @@ namespace CSE210_Assult
         {
             // create the cast
             Cast cast = new Cast();
-            cast.AddActor("food", new Food());
-            cast.AddActor("snake", new Snake(Constants.RED, new System.Numerics.Vector2(Constants.CELL_SIZE * 10, Constants.CELL_SIZE * 10)));
-            cast.AddActor("snake2", new Snake(Constants.YELLOW, new System.Numerics.Vector2(5 * Constants.CELL_SIZE * 10, Constants.CELL_SIZE * 10)));
-            cast.AddActor("score", new Score());
+            cast.AddActor();
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();

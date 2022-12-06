@@ -53,7 +53,7 @@ namespace CSE210_Assult.Game.Services
         /// <param name="actor">The actor to draw.</param>
         public void DrawActor(Actor actor)
         {
-            string text = actor.GetText();
+            string text = actor.GetImage();
             int x = actor.GetPosition().GetX();
             int y = actor.GetPosition().GetY();
             int fontSize = actor.GetFontSize();
