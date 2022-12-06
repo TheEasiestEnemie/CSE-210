@@ -20,6 +20,10 @@ public static class VectorCalculation {
         return Math.Sqrt(sum);
     }
 
+    public static double ConvertToDegrees(double angle) {
+        return angle * (180.0 / Math.PI);
+    }
+
     
 }
 
