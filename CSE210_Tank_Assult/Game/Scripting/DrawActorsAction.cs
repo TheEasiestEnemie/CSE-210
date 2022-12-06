@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using Unit05.Game.Casting;
-using Unit05.Game.Services;
+using CSE210_Assult.Game.Casting;
+using CSE210_Assult.Game.Services;
 
 
-namespace Unit05.Game.Scripting
+namespace CSE210_Assult.Game.Scripting
 {
     /// <summary>
     /// <para>An output action that draws all the actors.</para>

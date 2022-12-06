@@ -1,7 +1,7 @@
 using System;
 
 
-namespace Unit05.Game.Casting
+namespace CSE210_Assult.Game.Casting
 {
     /// <summary>
     /// <para>A tasty item that snakes like to eat.</para>

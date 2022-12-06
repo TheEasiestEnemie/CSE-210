@@ -1,10 +1,9 @@
-using System.Collections.Generic;
-using Unit05.Game.Casting;
-using Unit05.Game.Scripting;
-using Unit05.Game.Services;
+using CSE210_Assult.Game.Casting;
+using CSE210_Assult.Game.Scripting;
+using CSE210_Assult.Game.Services;
 
 
-namespace Unit05.Game.Directing
+namespace CSE210_Assult.Game.Directing
 {
     /// <summary>
     /// <para>A person who directs the game.</para>
@@ -50,8 +49,8 @@ namespace Unit05.Game.Directing
         /// <param name="script">The script of actions.</param>
         private void ExecuteActions(string group, Cast cast, Script script)
         {
-            List<Action> actions = script.GetActions(group);
-            foreach(Action action in actions)
+            List<Scripting.Action> actions = script.GetActions(group);
+            foreach(Scripting.Action action in actions)
             {
                 action.Execute(cast, script);
             }
