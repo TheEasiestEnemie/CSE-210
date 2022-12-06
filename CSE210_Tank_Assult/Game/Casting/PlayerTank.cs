@@ -1,13 +1,18 @@
+using Raylib_cs;
 using System.Numerics;
 using CSE210_Assult.Game.Casting;
 
 namespace CSE210_Assult.Game.Casting
 {
     public class PlayerTank: Actor {
-        
+        Texture2D texture;
         PlayerTank() {
             position.X = (float)Constants.MAX_X / 2.0f;
             position.Y = (float)Constants.MAX_Y / 2.0f;
+            var image = Raylib.LoadImage("../Images/tank.png");
+            Raylib.ImageResize(ref image, 50, 50);
+            this.texture = Raylib.LoadTextureFromImage(image);
+            Raylib.UnloadImage(image);
         }
 
         public void Draw() {

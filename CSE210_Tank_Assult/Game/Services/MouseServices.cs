@@ -6,13 +6,14 @@ namespace CSE210_Assult.Game.Services
     public class MouseServives
 
     {
-        public void Main()
+        public bool IsMouseButtonDown(string key)
         {
             Vector2 MousePosition = Raylib.GetMousePosition();
             if (Raylib.IsMouseButtonPressed(MouseButton.MOUSE_BUTTON_LEFT)) 
             {
-                ;
+                return true;
             }  
+            return false;
         }     
     }
 

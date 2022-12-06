@@ -24,11 +24,12 @@ namespace CSE210_Assult
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
+            MouseServives mouseServices = new MouseServives();
             VideoService videoService = new VideoService(false);
            
             // create the script
             Script script = new Script();
-            script.AddAction("input", new ControlActorsAction(keyboardService));
+            script.AddAction("input", new ControlActorsAction(keyboardService, mouseServices));
             script.AddAction("update", new MoveActorsAction());
             script.AddAction("update", new HandleCollisionsAction());
             script.AddAction("output", new DrawActorsAction(videoService));
