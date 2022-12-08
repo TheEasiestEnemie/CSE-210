@@ -83,9 +83,13 @@ namespace CSE210_Assult.Game.Casting
 
         public virtual Bullet Shoot()
         {
+<<<<<<< Updated upstream
             Bullet bullet = new Bullet(position, pointer, radius);
             Console.WriteLine("BANG!");
             return bullet;
+=======
+            return new Bullet(position, pointer, radius);
+>>>>>>> Stashed changes
         }
 
         /// <summary>
