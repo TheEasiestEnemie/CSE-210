@@ -20,7 +20,8 @@ namespace CSE210_Assult
         {
             // create the cast
             Cast cast = new Cast();
-            cast.AddActor();
+            PlayerTank player = new PlayerTank();
+            cast.AddActor("player", player);
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();

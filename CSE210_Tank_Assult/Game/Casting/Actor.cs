@@ -14,18 +14,20 @@ namespace CSE210_Assult.Game.Casting
     /// </summary>
     public class Actor
     {
-        protected double velocity;
+        protected Vector2 velocity;
         protected double radius;
+        protected double rotationAngle; 
         protected Vector2 position;
         protected Vector2 pointer;
         protected Color color = Constants.WHITE;
 
         public Actor() 
         {
-            velocity = 0;
+            velocity = new Vector2(0, 0);
             radius = 10;
-            position = new Vector2(0, 0);
+            position = new Vector2(50, 50);
             pointer = VectorCalculation.GetDirectionVector(position, new Vector2(1, 0));
+            rotationAngle = 0;
         }
 
 
@@ -51,7 +53,7 @@ namespace CSE210_Assult.Game.Casting
         /// Gets the actor's current velocity.
         /// </summary>
         /// <returns>The velocity.</returns>
-        public double GetVelocity()
+        public Vector2 GetVelocity()
         {
             return velocity;
         }
@@ -63,10 +65,15 @@ namespace CSE210_Assult.Game.Casting
         /// </summary>
         public virtual void MoveNext()
         {
-            int x = (int)(position.X + velocity * pointer.X);
-            int y = (int)(position.Y + velocity * pointer.Y);
+            int x = (int)(position.X + velocity.X);
+            int y = (int)(position.Y + velocity.Y);
             
             position = new Vector2(x, y);
+        }
+
+        public virtual void DrawImage()
+        {
+            Raylib.DrawCircle((int)position.X, (int)position.Y, (float)radius, Raylib_cs.Color.WHITE);
         }
 
         /// <summary>
@@ -88,7 +95,7 @@ namespace CSE210_Assult.Game.Casting
         /// </summary>
         /// <param name="velocity">The given velocity.</param>
         /// <exception cref="ArgumentException">When velocity is null.</exception>
-        public void SetVelocity(double velocity)
+        public void SetVelocity(Vector2 velocity)
         {
             if (velocity == null)
             {
@@ -96,5 +103,6 @@ namespace CSE210_Assult.Game.Casting
             }
             this.velocity = velocity;
         }
+
     }
 }
