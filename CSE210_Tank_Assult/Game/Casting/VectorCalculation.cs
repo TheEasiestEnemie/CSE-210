@@ -14,6 +14,9 @@ public static class VectorCalculation {
         double dotProduct = (firstVector.X * secondVector.X) + (firstVector.Y * secondVector.Y);
         double step2 = dotProduct / (GetVectorMagnitude(firstVector) * GetVectorMagnitude(secondVector));
         double angle = Math.Acos(step2);
+        if (Math.Sqrt(Math.Pow(angle, 2)) < 0.00001 || angle.Equals(double.NaN)) {
+            angle = 0;
+        }
         return angle;
     }
 

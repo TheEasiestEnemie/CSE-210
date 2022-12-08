@@ -80,8 +80,31 @@ namespace CSE210_Assult.Game.Scripting
 
             else {
             }
-
+            
+            
             PlayerTank player = (PlayerTank)cast.GetFirstActor("player");
+            float x = player.GetPosition().X;
+            float y = player.GetPosition().Y;
+            float radius = (float)player.GetRadius();
+            if (x + radius > Constants.MAX_X || x - radius < 0) {
+                if (x - radius < 0) {
+                    x = radius;
+                }
+                else if (x + radius > Constants.MAX_X) {
+                    x = Constants.MAX_X;
+                }
+            }
+            if (y + radius > Constants.MAX_Y || y - radius < 0) {
+                if (y - radius < 0) {
+                    y = radius;
+                }
+                else if (y + radius > Constants.MAX_Y) {
+                    y = Constants.MAX_Y;
+                }
+            }
+
+            player.SetPosition(new Vector2(x, y));
+
             player.SetVelocity(direction);
 
             direction = new Vector2(0, 0);

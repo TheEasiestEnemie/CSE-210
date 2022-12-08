@@ -10,43 +10,23 @@ namespace CSE210_Assult.Game.Casting
         public PlayerTank() {
             position.X = (float)Constants.MAX_X / 2.0f;
             position.Y = (float)Constants.MAX_Y / 2.0f;
-            var image = Raylib.LoadImage("tank.png");
-            Raylib.ImageResize(ref image, 50, 50);
-            texture = Raylib.LoadTextureFromImage(image);
+            var image = Raylib.LoadImage("link.png");
+            //Raylib.ImageResize(ref image, 50, 50);
+            this.texture = Raylib.LoadTextureFromImage(image);
             Raylib.UnloadImage(image);
-        }
-
-        public override void MoveNext()
-        {
-            int x = (int)(position.X + velocity.X);
-            int y = (int)(position.Y + velocity.Y);
-            if (x + radius > Constants.MAX_X || x - radius < 0) {
-                if (x > 0) {
-                    x -= (int)(velocity.X);
-                }
-                else {
-                    x += (int)(velocity.X);
-                }
-            }
-            if (y + radius > Constants.MAX_Y || y - radius < 0) {
-                if (y > 0) {
-                    y -= (int)(velocity.Y);
-                }
-                else {
-                    y += (int)(velocity.Y);
-                }
-            }
-            position = new Vector2(x, y);
         }
 
         public override void DrawImage()
         {
             Raylib.DrawCircle((int)position.X, (int)position.Y, (float)radius, Raylib_cs.Color.WHITE);
             Vector2 mouseVector = VectorCalculation.GetDirectionVector(position, MouseServices.ReturnMousePosition());
+            Rectangle rect = new Rectangle((float)(position.X + radius), (float)(position.Y + radius), 2 * (float)radius, 2 * (float)radius);
+            var origin = new Vector2(rect.width / 2, rect.height / 2);
+            var source = new Rectangle(0, 0, rect.width, rect.height);
             double angle = VectorCalculation.GetAngle(pointer, mouseVector);
             rotationAngle += angle;
-            Raylib.DrawTexture(texture, (int)position.X, (int)position.Y, Raylib_cs.Color.WHITE); //(float)rotationAngle, 1.0f, new Raylib_cs.Color());
             pointer = new Vector2(mouseVector.X, mouseVector.Y);
+            Raylib.DrawTextureTiled(this.texture, source, rect, origin, (float)rotationAngle, 1.0F, Raylib_cs.Color.WHITE);
         }
     }
 }

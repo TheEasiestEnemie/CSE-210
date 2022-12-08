@@ -58,6 +58,11 @@ namespace CSE210_Assult.Game.Casting
             return velocity;
         }
 
+        public double GetRadius()
+        {
+            return radius;
+        }
+
         /// <summary>
         /// Moves the actor to its next position according to its velocity. Will wrap the position 
         /// from one side of the screen to the other when it reaches the maximum x and y 
@@ -74,6 +79,11 @@ namespace CSE210_Assult.Game.Casting
         public virtual void DrawImage()
         {
             Raylib.DrawCircle((int)position.X, (int)position.Y, (float)radius, Raylib_cs.Color.WHITE);
+        }
+
+        public virtual void Shoot()
+        {
+            new Bullet(position, pointer, radius);
         }
 
         /// <summary>
