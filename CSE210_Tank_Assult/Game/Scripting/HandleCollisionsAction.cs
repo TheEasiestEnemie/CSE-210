@@ -48,38 +48,6 @@ namespace CSE210_Assult.Game.Scripting
                 message.SetText("Game Over!");
                 message.SetPosition(position);
                 cast.AddActor("messages", message);
-
-                // make everything white
-                
-                if (isGameOver1)
-                {
-                    foreach (Actor segment in segments)
-                    {
-                        segment.SetColor(Constants.WHITE);
-                    }
-                
-                }
-
-                else if (isGameOver2)
-                {
-                    foreach (Actor segment in segments2)
-                    {
-                        segment.SetColor(Constants.WHITE);
-                    }
-                }
-                else if (isGameOver3)
-                {
-                    foreach (Actor segment in segments2)
-                    {
-                        segment.SetColor(Constants.WHITE);
-                    }
-                    foreach (Actor segment in segments)
-                    {
-                        segment.SetColor(Constants.WHITE);
-                    }
-                }
-
-                food.SetColor(Constants.WHITE);
             }
         }
 
