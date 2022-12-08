@@ -1,5 +1,6 @@
 using CSE210_Assult.Game.Casting;
 using CSE210_Assult.Game.Services;
+using System.Numerics;
 
 
 namespace CSE210_Assult.Game.Scripting
@@ -14,8 +15,8 @@ namespace CSE210_Assult.Game.Scripting
     {
         private KeyboardService keyboardService;
         private MouseServices mouseServices;
-        private Point direction = new Point(0, -Constants.CELL_SIZE);
-        private Point direction2 = new Point(0, -Constants.CELL_SIZE);
+        private Vector2 direction = new Vector2(0, -Constants.CELL_SIZE);
+        private Vector2 direction2 = new Vector2(0, -Constants.CELL_SIZE);
 
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
@@ -32,49 +33,25 @@ namespace CSE210_Assult.Game.Scripting
             // left
             if (keyboardService.IsKeyDown("a"))
             {
-                direction = new Point(-Constants.CELL_SIZE, 0);
+                direction = new Vector2(-Constants.CELL_SIZE, 0);
             }
 
             // right
             if (keyboardService.IsKeyDown("d"))
             {
-                direction = new Point(Constants.CELL_SIZE, 0);
+                direction = new Vector2(Constants.CELL_SIZE, 0);
             }
 
             // up
             if (keyboardService.IsKeyDown("w"))
             {
-                direction = new Point(0, -Constants.CELL_SIZE);
+                direction = new Vector2(0, -Constants.CELL_SIZE);
             }
 
             // down
             if (keyboardService.IsKeyDown("s"))
             {
-                direction = new Point(0, Constants.CELL_SIZE);
-            }
-
-            // left
-            if (keyboardService.IsKeyDown("j"))
-            {
-                direction2 = new Point(-Constants.CELL_SIZE, 0);
-            }
-
-            // right
-            if (keyboardService.IsKeyDown("l"))
-            {
-                direction2 = new Point(Constants.CELL_SIZE, 0);
-            }
-
-            // up
-            if (keyboardService.IsKeyDown("i"))
-            {
-                direction2 = new Point(0, -Constants.CELL_SIZE);
-            }
-
-            // down
-            if (keyboardService.IsKeyDown("k"))
-            {
-                direction2 = new Point(0, Constants.CELL_SIZE);
+                direction = new Vector2(0, Constants.CELL_SIZE);
             }
         }
     }
