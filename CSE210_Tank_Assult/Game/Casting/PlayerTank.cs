@@ -11,7 +11,8 @@ namespace CSE210_Assult.Game.Casting
             position.X = (float)Constants.MAX_X / 2.0f;
             position.Y = (float)Constants.MAX_Y / 2.0f;
             radius = 50;
-            Image image = Raylib.GenImageGradientV(20, 80, Raylib_cs.Color.GRAY, Raylib_cs.Color.LIGHTGRAY);
+            Image image = Raylib.LoadImage("tank.png");
+            //Image image = Raylib.GenImageGradientV(20, 80, Raylib_cs.Color.GRAY, Raylib_cs.Color.LIGHTGRAY);
             Raylib.ImageResize(ref image, 20, 80);
             this.texture = Raylib.LoadTextureFromImage(image);
             Raylib.UnloadImage(image);
