@@ -15,6 +15,10 @@ namespace CSE210_Assult.Game.Casting
 
             velocity.X = this.pointer.X * speed;
             velocity.Y = this.pointer.Y * speed;
+
+            Console.WriteLine("X Vector: " + velocity.X);
+            Console.WriteLine("Y Vector: " + velocity.Y);
+
         }
     }
 }

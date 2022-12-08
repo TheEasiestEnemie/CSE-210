@@ -10,17 +10,18 @@ namespace CSE210_Assult.Game.Casting
         public PlayerTank() {
             position.X = (float)Constants.MAX_X / 2.0f;
             position.Y = (float)Constants.MAX_Y / 2.0f;
-            var image = Raylib.LoadImage("link.png");
-            //Raylib.ImageResize(ref image, 50, 50);
+            radius = 50;
+            var image = Raylib.LoadImage("tank.png");
+            Raylib.ImageResize(ref image, 100, 100);
             this.texture = Raylib.LoadTextureFromImage(image);
             Raylib.UnloadImage(image);
         }
 
         public override void DrawImage()
         {
-            Raylib.DrawCircle((int)position.X, (int)position.Y, (float)radius, Raylib_cs.Color.WHITE);
+            //Raylib.DrawCircle((int)position.X, (int)position.Y, (float)radius, Raylib_cs.Color.WHITE);
             Vector2 mouseVector = VectorCalculation.GetDirectionVector(position, MouseServices.ReturnMousePosition());
-            Rectangle rect = new Rectangle((float)(position.X + radius), (float)(position.Y + radius), 2 * (float)radius, 2 * (float)radius);
+            Rectangle rect = new Rectangle((float)(position.X), (float)(position.Y), 2 * (float)radius, 2 * (float)radius);
             var origin = new Vector2(rect.width / 2, rect.height / 2);
             var source = new Rectangle(0, 0, rect.width, rect.height);
             double angle = VectorCalculation.GetAngle(pointer, mouseVector);

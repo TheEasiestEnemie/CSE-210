@@ -20,14 +20,15 @@ namespace CSE210_Assult
         {
             // create the cast
             Cast cast = new Cast();
-            PlayerTank player = new PlayerTank();
-            cast.AddActor("player", player);
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
             MouseServices mouseServices = new MouseServices();
             VideoService videoService = new VideoService(false);
-           
+            videoService.OpenWindow();
+            
+            PlayerTank player = new PlayerTank();
+            cast.AddActor("player", player);
             // create the script
             Script script = new Script();
             script.AddAction("input", new ControlActorsAction(keyboardService, mouseServices));

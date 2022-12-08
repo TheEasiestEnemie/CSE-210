@@ -81,9 +81,10 @@ namespace CSE210_Assult.Game.Casting
             Raylib.DrawCircle((int)position.X, (int)position.Y, (float)radius, Raylib_cs.Color.WHITE);
         }
 
-        public virtual void Shoot()
+        public virtual Bullet Shoot()
         {
-            new Bullet(position, pointer, radius);
+            Bullet bullet = new Bullet(position, pointer, radius);
+            return bullet;
         }
 
         /// <summary>

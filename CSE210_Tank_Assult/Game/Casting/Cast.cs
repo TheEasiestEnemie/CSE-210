@@ -99,5 +99,18 @@ namespace CSE210_Assult.Game.Casting
             }
         }
 
+        public List<Actor> GetGroupActors(string group)
+        {
+            List<Actor> results = new List<Actor>();
+            if (actors.ContainsKey(group))
+            {
+                foreach (List<Actor> result in actors.Values)
+                {
+                    results.AddRange(result);
+                }
+            }
+            return results;
+        }
+
     }
 }
