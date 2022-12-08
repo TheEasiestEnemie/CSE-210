@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using CSE210_Assult.Game.Casting;
 using CSE210_Assult.Game.Services;
 
@@ -24,20 +23,15 @@ namespace CSE210_Assult.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            Snake snake2 = (Snake)cast.GetFirstActor("snake2");
-            List<Actor> segments = snake.GetSegments();
-            List<Actor> segments2 = snake2.GetSegments();
+
             // Actor score = cast.GetFirstActor("score");
             // Actor food = cast.GetFirstActor("food");
-            List<Actor> messages = cast.GetActors("messages");
-            
+            Actor player = cast.GetFirstActor("player");
             videoService.ClearBuffer();
-            videoService.DrawActors(segments);
-            videoService.DrawActors(segments2);
+            //videoService.DrawActors(/*Add the thing that needs to be drawn*/);
+            videoService.DrawActor(player);
             // videoService.DrawActor(score);
             // videoService.DrawActor(food);
-            videoService.DrawActors(messages);
             videoService.FlushBuffer();
         }
     }

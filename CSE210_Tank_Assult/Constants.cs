@@ -16,7 +16,7 @@ namespace CSE210_Assult.Game
         public static int CELL_SIZE = 15;
         public static int MAX_X = 1800;
         public static int MAX_Y = 1000;
-        public static int FRAME_RATE = 15;
+        public static int FRAME_RATE = 60;
         public static int FONT_SIZE = 15;
         public static string CAPTION = "Snake";
         public static int SNAKE_LENGTH = 8;
