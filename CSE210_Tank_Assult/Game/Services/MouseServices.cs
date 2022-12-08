@@ -6,12 +6,12 @@ namespace CSE210_Assult.Game.Services
     public class MouseServices
 
     {
-        public bool IsMouseButtonDown(string key)
+        public bool IsMouseButtonDown()
         {
             if (Raylib.IsMouseButtonPressed(MouseButton.MOUSE_BUTTON_LEFT)) 
             {
                 return true;
-            }  
+            }
             return false;
         }   
 

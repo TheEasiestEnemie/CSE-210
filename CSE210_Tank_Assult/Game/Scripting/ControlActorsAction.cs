@@ -17,6 +17,7 @@ namespace CSE210_Assult.Game.Scripting
         private MouseServices mouseServices;
         private Vector2 direction = new Vector2(0, 0);
         private float subSpeed = (float)Math.Sqrt(Math.Pow(Constants.PLAYER_SPEED, 2) / 2);
+        private bool hasShot = false;
 
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
@@ -78,28 +79,28 @@ namespace CSE210_Assult.Game.Scripting
                 direction.Y = subSpeed;
             }
 
-            else {
-            }
             
             
             PlayerTank player = (PlayerTank)cast.GetFirstActor("player");
             float x = player.GetPosition().X;
             float y = player.GetPosition().Y;
             float radius = (float)player.GetRadius();
-            if (x + radius > Constants.MAX_X || x - radius < 0) {
+            if (x + radius > Constants.MAX_X || x - radius < 0)
+            {
                 if (x - radius < 0) {
                     x = radius;
                 }
                 else if (x + radius > Constants.MAX_X) {
-                    x = Constants.MAX_X;
+                    x = Constants.MAX_X - radius;
                 }
             }
-            if (y + radius > Constants.MAX_Y || y - radius < 0) {
+            if (y + radius > Constants.MAX_Y || y - radius < 0)
+            {
                 if (y - radius < 0) {
                     y = radius;
                 }
                 else if (y + radius > Constants.MAX_Y) {
-                    y = Constants.MAX_Y;
+                    y = Constants.MAX_Y - radius;
                 }
             }
 
@@ -108,6 +109,18 @@ namespace CSE210_Assult.Game.Scripting
             player.SetVelocity(direction);
 
             direction = new Vector2(0, 0);
+
+            if (mouseServices.IsMouseButtonDown() && !hasShot)
+            {
+                Console.WriteLine("BANG!");
+                Bullet newBullet = player.Shoot();
+                cast.AddActor("bullet", newBullet);
+                hasShot = true;
+            }
+            else 
+            {
+                hasShot = false;
+            }
         }
     }
 }
