@@ -24,7 +24,7 @@ namespace CSE210_Assult
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
-            MouseServives mouseServices = new MouseServives();
+            MouseServices mouseServices = new MouseServices();
             VideoService videoService = new VideoService(false);
            
             // create the script
