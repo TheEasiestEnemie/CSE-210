@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Numerics;
 using CSE210_Assult.Game.Casting;
 using CSE210_Assult.Game.Services;
 
@@ -24,7 +23,6 @@ namespace CSE210_Assult.Game.Scripting
         /// </summary>
         public HandleCollisionsAction()
         {
-            
         }
 
         /// <inheritdoc/>
@@ -41,6 +39,47 @@ namespace CSE210_Assult.Game.Scripting
             if (isGameOver)
             {
 
+                // create a "game over" message
+                int x = Constants.MAX_X / 2;
+                int y = Constants.MAX_Y / 2;
+                Point position = new Point(x, y);
+
+                Actor message = new Actor();
+                message.SetText("Game Over!");
+                message.SetPosition(position);
+                cast.AddActor("messages", message);
+
+                // make everything white
+                
+                if (isGameOver1)
+                {
+                    foreach (Actor segment in segments)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
+                
+                }
+
+                else if (isGameOver2)
+                {
+                    foreach (Actor segment in segments2)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
+                }
+                else if (isGameOver3)
+                {
+                    foreach (Actor segment in segments2)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
+                    foreach (Actor segment in segments)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
+                }
+
+                food.SetColor(Constants.WHITE);
             }
         }
 

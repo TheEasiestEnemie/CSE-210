@@ -13,14 +13,14 @@ namespace CSE210_Assult.Game.Scripting
     public class ControlActorsAction : Action
     {
         private KeyboardService keyboardService;
-        private MouseServives mouseServices;
+        private MouseServices mouseServices;
         private Point direction = new Point(0, -Constants.CELL_SIZE);
         private Point direction2 = new Point(0, -Constants.CELL_SIZE);
 
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
         /// </summary>
-        public ControlActorsAction(KeyboardService keyboardService, MouseServives mouseServices)
+        public ControlActorsAction(KeyboardService keyboardService, MouseServices mouseServices)
         {
             this.keyboardService = keyboardService;
             this.mouseServices = mouseServices;
