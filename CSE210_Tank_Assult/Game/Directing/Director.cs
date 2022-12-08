@@ -31,7 +31,6 @@ namespace CSE210_Assult.Game.Directing
         /// <param name="script">The given script.</param>
         public void StartGame(Cast cast, Script script)
         {
-            videoService.OpenWindow();
             while (videoService.IsWindowOpen())
             {
                 ExecuteActions("input", cast, script);
