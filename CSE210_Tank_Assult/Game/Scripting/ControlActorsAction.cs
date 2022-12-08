@@ -15,8 +15,8 @@ namespace CSE210_Assult.Game.Scripting
     {
         private KeyboardService keyboardService;
         private MouseServices mouseServices;
-        private Vector2 direction = new Vector2(0, -Constants.CELL_SIZE);
-        private Vector2 direction2 = new Vector2(0, -Constants.CELL_SIZE);
+        private Vector2 direction = new Vector2(0, 0);
+        private float subSpeed = (float)Math.Sqrt(Math.Pow(Constants.PLAYER_SPEED, 2) / 2);
 
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
@@ -33,26 +33,58 @@ namespace CSE210_Assult.Game.Scripting
             // left
             if (keyboardService.IsKeyDown("a"))
             {
-                direction = new Vector2(-Constants.CELL_SIZE, 0);
+                if (keyboardService.IsKeyDown("w")) {
+                    direction.X = -subSpeed;
+                    direction.Y = -subSpeed;
+                }
+
+                else if (keyboardService.IsKeyDown("s")) {
+                    direction.X = -subSpeed;
+                    direction.Y = subSpeed;
+                }
+
+                else {
+                    direction.X = -Constants.PLAYER_SPEED;
+                }
             }
 
             // right
             if (keyboardService.IsKeyDown("d"))
             {
-                direction = new Vector2(Constants.CELL_SIZE, 0);
+                if (keyboardService.IsKeyDown("w")) {
+                    direction.X = subSpeed;
+                    direction.Y = -subSpeed;
+                }
+
+                else if (keyboardService.IsKeyDown("s")) {
+                    direction.X = subSpeed;
+                    direction.Y = subSpeed;
+                }
+
+                else {
+                    direction.X = Constants.PLAYER_SPEED;
+                }
             }
 
             // up
             if (keyboardService.IsKeyDown("w"))
             {
-                direction = new Vector2(0, -Constants.CELL_SIZE);
+                direction.Y = -subSpeed;
             }
 
             // down
             if (keyboardService.IsKeyDown("s"))
             {
-                direction = new Vector2(0, Constants.CELL_SIZE);
+                direction.Y = subSpeed;
             }
+
+            else {
+            }
+
+            PlayerTank player = (PlayerTank)cast.GetFirstActor("player");
+            player.SetVelocity(direction);
+
+            direction = new Vector2(0, 0);
         }
     }
 }
