@@ -18,7 +18,7 @@ namespace CSE210_Assult.Game.Casting
         protected double radius;
         protected double rotationAngle; 
         protected Vector2 position;
-        protected Vector2 pointer;
+        protected Vector2 pointer; //determines the rotation of the actor plus where it shoots a bullet
         protected Color color = Constants.WHITE;
 
         public Actor() 
