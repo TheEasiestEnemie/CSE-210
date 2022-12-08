@@ -23,7 +23,7 @@ namespace CSE210_Assult.Game.Scripting
 
         public void Execute(Cast cast, Script script)
         {
-            EnemyTank enemy = (EnemyTank)cast.
+            List<Actor> enemy = cast.GetGroupActors("enemy");
         }
     }
 
