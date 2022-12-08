@@ -12,13 +12,16 @@ namespace CSE210_Assult.Game.Casting
 
             position.X = (float)Math.Cos(VectorCalculation.GetAngle(new Vector2(0,0), this.pointer));
             position.Y = (float)Math.Sin(VectorCalculation.GetAngle(new Vector2(0,0), this.pointer));
+            position.X = position.X * (float)radius;
+            position.Y = position.Y * (float)radius;
 
-            velocity.X = this.pointer.X * speed;
-            velocity.Y = this.pointer.Y * speed;
+            float pointerMagnitude = (float)VectorCalculation.GetVectorMagnitude(pointer);
 
-            Console.WriteLine("X Vector: " + velocity.X);
-            Console.WriteLine("Y Vector: " + velocity.Y);
+            velocity.X = this.pointer.X / pointerMagnitude * speed;
+            velocity.Y = this.pointer.Y / pointerMagnitude * speed;
 
+            //Console.WriteLine("X Vector: " + velocity.X);
+            //Console.WriteLine("Y Vector: " + velocity.Y);
         }
     }
 }

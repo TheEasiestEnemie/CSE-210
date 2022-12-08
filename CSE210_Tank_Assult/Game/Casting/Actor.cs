@@ -84,6 +84,7 @@ namespace CSE210_Assult.Game.Casting
         public virtual Bullet Shoot()
         {
             Bullet bullet = new Bullet(position, pointer, radius);
+            Console.WriteLine("BANG!");
             return bullet;
         }
 

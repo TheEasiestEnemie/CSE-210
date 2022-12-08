@@ -6,11 +6,9 @@ public static class VectorCalculation {
         Vector2 directionVector;
         directionVector.X = endPoint.X - startPoint.X;
         directionVector.Y = endPoint.Y - startPoint.Y;
-        Raylib.DrawLine((int)startPoint.X, (int)startPoint.Y, (int)directionVector.X /* + (int)startPoint.X */, (int)directionVector.Y /*+ (int)startPoint.Y*/, Raylib_cs.Color.BLUE);
-        directionVector.X /= (float)GetVectorMagnitude(directionVector);
-        directionVector.Y /= (float)GetVectorMagnitude(directionVector);
+        //Raylib.DrawLine((int)startPoint.X, (int)startPoint.Y, (int)directionVector.X /* + (int)startPoint.X */, (int)directionVector.Y /*+ (int)startPoint.Y*/, Raylib_cs.Color.BLUE);
 
-        Console.WriteLine("Direction Vector: " + directionVector.X + ", " + directionVector.Y);
+        //Console.WriteLine("Direction Vector: " + directionVector.X + ", " + directionVector.Y);
         Raylib.DrawLine((int)startPoint.X, (int)startPoint.Y, (int)endPoint.X, (int)endPoint.Y, Raylib_cs.Color.WHITE);
         return directionVector;
     }
@@ -23,6 +21,7 @@ public static class VectorCalculation {
         if (Math.Sqrt(Math.Pow(angle, 2)) < 0.00001 || angle.Equals(double.NaN)) {
             angle = 0;
         }
+        
         return angle;
     }
 
