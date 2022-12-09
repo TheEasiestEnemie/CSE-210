@@ -11,7 +11,7 @@ namespace CSE210_Assult.Game.Casting
             this.radius = 3.0;
             float speed = 5;
             color = new Color(255, 0, 0);
-            if (!shotBy.Equals("player"))
+            if (shotBy.Equals("player"))
             {
                 color = new Color(255, 255, 255);
             }

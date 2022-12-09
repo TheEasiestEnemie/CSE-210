@@ -14,7 +14,7 @@ namespace CSE210_Assult.Game.Casting
         Vector2 playerPosition;
         float speed;
         public EnemyTank() {
-            speed = 3;
+            speed = 1;
             Random ran = new Random();
             name = "enemy";
             float change = ran.Next(1,5);
