@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using CSE210_Assult.Game.Casting;
 using CSE210_Assult.Game.Services;
+using Raylib_cs;
 
 
 namespace CSE210_Assult.Game.Scripting
@@ -31,6 +32,46 @@ namespace CSE210_Assult.Game.Scripting
             if (!isGameOver)
             {
                 HandleGameOver(cast);
+            }
+
+            PlayerTank player = (PlayerTank)cast.GetFirstActor("player");
+            List<Actor> bullets = cast.GetGroupActors("bullet");
+            List<Actor> enemies = cast.GetGroupActors("enemy");
+            List<Actor> thingsToDestroy = new List<Actor>();
+
+            for (int b = 0; b < bullets.Count; b++)
+            {
+                Bullet bullet;
+                if (bullets[b] is Bullet)
+                {
+                    bullet = (Bullet)bullets[b];
+                    for (int i = 0; i < enemies.Count; i++)
+                    {
+                        EnemyTank enemy;
+                        if (enemies[i] is EnemyTank)
+                        {
+                            enemy = (EnemyTank)enemies[i];
+                            if (Raylib.CheckCollisionCircles(bullet.GetPosition(), (float)bullet.GetRadius(), 
+                            enemy.GetPosition(), (float)enemy.GetRadius()));
+                            {
+                                thingsToDestroy.Add(bullet);
+                                thingsToDestroy.Add(enemy);
+                            }
+                        }
+                    }
+                }
+            }
+
+            foreach (Actor entity in thingsToDestroy)
+            {
+                if (entity is EnemyTank)
+                {
+                    cast.RemoveActor("enemy", entity);
+                }
+                else if (entity is Bullet)
+                {
+                    cast.RemoveActor("bullet", entity);
+                }
             }
         }
 

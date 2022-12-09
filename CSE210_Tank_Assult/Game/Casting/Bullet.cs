@@ -5,6 +5,7 @@ using CSE210_Assult.Game.Services;
 namespace CSE210_Assult.Game.Casting
 {
     public class Bullet: Actor {
+        string source = "enemy";
         public Bullet(Vector2 position, Vector2 pointer, double radius, string shotBy) {
             this.pointer = pointer;
             this.position = position;
@@ -13,7 +14,9 @@ namespace CSE210_Assult.Game.Casting
             color = new Color(255, 0, 0);
             if (shotBy.Equals("player"))
             {
+                source = "player";
                 color = new Color(255, 255, 255);
+                
             }
 
             //float bulletAngleX = (float)Math.Cos(VectorCalculation.GetAngle(new Vector2(1,0), this.pointer));
@@ -35,6 +38,11 @@ namespace CSE210_Assult.Game.Casting
 
             //Console.WriteLine("X Vector: " + velocity.X);
             //Console.WriteLine("Y Vector: " + velocity.Y);
+        }
+
+        public string GetSource()
+        {
+            return source;
         }
     }
 }
