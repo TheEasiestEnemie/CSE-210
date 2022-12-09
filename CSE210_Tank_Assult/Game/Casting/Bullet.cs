@@ -5,11 +5,16 @@ using CSE210_Assult.Game.Services;
 namespace CSE210_Assult.Game.Casting
 {
     public class Bullet: Actor {
-        public Bullet(Vector2 position, Vector2 pointer, double radius) {
+        public Bullet(Vector2 position, Vector2 pointer, double radius, string shotBy) {
             this.pointer = pointer;
             this.position = position;
-            this.radius = 5.0;
+            this.radius = 3.0;
             float speed = 5;
+            color = new Color(255, 0, 0);
+            if (!shotBy.Equals("player"))
+            {
+                color = new Color(255, 255, 255);
+            }
 
             //float bulletAngleX = (float)Math.Cos(VectorCalculation.GetAngle(new Vector2(1,0), this.pointer));
             //float bulletAngleY = (float)Math.Sin(VectorCalculation.GetAngle(new Vector2(1,0), this.pointer));

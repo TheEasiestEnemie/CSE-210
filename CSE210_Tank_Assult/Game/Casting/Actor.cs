@@ -20,9 +20,11 @@ namespace CSE210_Assult.Game.Casting
         protected Vector2 position;
         protected Vector2 pointer; //determines the rotation of the actor plus where it shoots a bullet
         protected Color color = Constants.WHITE;
+        protected string name;
 
         public Actor() 
         {
+            name = "";
             velocity = new Vector2(0, 0);
             radius = 10;
             position = new Vector2(50, 50);
@@ -78,12 +80,12 @@ namespace CSE210_Assult.Game.Casting
 
         public virtual void DrawImage()
         {
-            Raylib.DrawCircle((int)position.X, (int)position.Y, (float)radius, Raylib_cs.Color.WHITE);
+            Raylib.DrawCircle((int)position.X, (int)position.Y, (float)radius, new Raylib_cs.Color(color.GetRed(), color.GetGreen(), color.GetBlue(), color.GetAlpha()));
         }
 
         public virtual Bullet Shoot()
         {
-            Bullet bullet = new Bullet(position, pointer, radius);
+            Bullet bullet = new Bullet(position, pointer, radius, name);
             Console.WriteLine("BANG!");
             return bullet;
         }
