@@ -34,6 +34,7 @@ namespace CSE210_Assult
             script.AddAction("input", new ControlActorsAction(keyboardService, mouseServices));
             script.AddAction("update", new MoveActorsAction());
             script.AddAction("update", new HandleCollisionsAction());
+            script.AddAction("update", new HandleEnemiesAction());
             script.AddAction("output", new DrawActorsAction(videoService));
 
             // start the game

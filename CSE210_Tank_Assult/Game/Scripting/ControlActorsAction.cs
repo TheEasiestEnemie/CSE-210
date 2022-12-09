@@ -112,7 +112,7 @@ namespace CSE210_Assult.Game.Scripting
 
             if (mouseServices.IsMouseButtonDown() && !hasShot)
             {
-                Console.WriteLine("BANG!");
+                //Console.WriteLine("BANG!");
                 Bullet newBullet = player.Shoot();
                 cast.AddActor("bullet", newBullet);
                 hasShot = true;

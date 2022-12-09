@@ -28,7 +28,7 @@ public static class VectorCalculation {
     public static double GetVectorMagnitude(Vector2 vector) {
         double sum = Math.Pow(vector.X, 2) + Math.Pow(vector.Y, 2);
         double final = Math.Sqrt(sum);
-        Console.WriteLine("Magnitude: " + final);
+        //Console.WriteLine("Magnitude: " + final);
         return final;
     }
 

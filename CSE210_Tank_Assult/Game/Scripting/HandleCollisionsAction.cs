@@ -38,6 +38,7 @@ namespace CSE210_Assult.Game.Scripting
         {
             if (isGameOver)
             {
+                
 
                 // create a "game over" message
                 int x = Constants.MAX_X / 2;

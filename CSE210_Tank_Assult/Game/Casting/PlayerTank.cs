@@ -8,6 +8,7 @@ namespace CSE210_Assult.Game.Casting
     public class PlayerTank: Actor {
         Texture2D texture;
         public PlayerTank() {
+            name = "player";
             position.X = (float)Constants.MAX_X / 2.0f;
             position.Y = (float)Constants.MAX_Y / 2.0f;
             radius = 25;
