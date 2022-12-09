@@ -1,5 +1,6 @@
 using System.Numerics;
 using Raylib_cs;
+using CSE210_Assult.Game.Services;
 
 namespace CSE210_Assult.Game.Casting
 {
@@ -10,10 +11,17 @@ namespace CSE210_Assult.Game.Casting
             this.radius = 5.0;
             float speed = 5;
 
-            position.X = (float)Math.Cos(VectorCalculation.GetAngle(new Vector2(0,0), this.pointer));
-            position.Y = (float)Math.Sin(VectorCalculation.GetAngle(new Vector2(0,0), this.pointer));
-            position.X = position.X * (float)radius;
-            position.Y = position.Y * (float)radius;
+            //float bulletAngleX = (float)Math.Cos(VectorCalculation.GetAngle(new Vector2(1,0), this.pointer));
+            //float bulletAngleY = (float)Math.Sin(VectorCalculation.GetAngle(new Vector2(1,0), this.pointer));
+            /*if (MouseServices.ReturnMousePosition().Y <= position.Y)
+            {
+                bulletAngleX = -bulletAngleX;
+                bulletAngleY = -bulletAngleY;
+            }
+            this.position.X = (float)radius * bulletAngleX + position.X;
+            this.position.Y = (float)radius * bulletAngleY + position.Y;*/
+            //this.position.X = position.X * (float)radius;
+            //this.position.Y = position.Y * (float)radius;
 
             float pointerMagnitude = (float)VectorCalculation.GetVectorMagnitude(pointer);
 
