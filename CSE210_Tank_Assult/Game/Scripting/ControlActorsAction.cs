@@ -82,6 +82,7 @@ namespace CSE210_Assult.Game.Scripting
             
             
             PlayerTank player = (PlayerTank)cast.GetFirstActor("player");
+            BulletList bulletList = (BulletList)cast.GetFirstActor("bulletList");
             float x = player.GetPosition().X;
             float y = player.GetPosition().Y;
             float radius = (float)player.GetRadius();
@@ -114,7 +115,7 @@ namespace CSE210_Assult.Game.Scripting
             {
                 //Console.WriteLine("BANG!");
                 Bullet newBullet = player.Shoot();
-                cast.AddActor("bullet", newBullet);
+                bulletList.AddToList(newBullet);
                 hasShot = true;
             }
             else 

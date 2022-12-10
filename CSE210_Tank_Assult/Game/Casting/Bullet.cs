@@ -4,8 +4,12 @@ using CSE210_Assult.Game.Services;
 
 namespace CSE210_Assult.Game.Casting
 {
-    public class Bullet: Actor {
+    public class Bullet:Actor {
         string source = "enemy";
+        public Bullet()
+        {
+            
+        }
         public Bullet(Vector2 position, Vector2 pointer, double radius, string shotBy) {
             this.pointer = pointer;
             this.position = position;

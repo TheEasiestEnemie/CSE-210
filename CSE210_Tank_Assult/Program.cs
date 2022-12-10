@@ -28,7 +28,11 @@ namespace CSE210_Assult
             videoService.OpenWindow();
             
             PlayerTank player = new PlayerTank();
+            BulletList bulletList = new BulletList();
+            EnemyList enemyList = new EnemyList();
             cast.AddActor("player", player);
+            cast.AddActor("bulletList", bulletList);
+            cast.AddActor("enemyList", enemyList);
             // create the script
             Script script = new Script();
             script.AddAction("input", new ControlActorsAction(keyboardService, mouseServices));

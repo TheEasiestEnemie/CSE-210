@@ -25,11 +25,13 @@ namespace CSE210_Assult.Game.Scripting
         {
             Random ran = new Random();
             PlayerTank player = (PlayerTank)cast.GetFirstActor("player");
-            List<Actor> enemies = cast.GetGroupActors("enemy");
+            EnemyList enemyList = (EnemyList)cast.GetFirstActor("enemyList");
+            BulletList bulletList = (BulletList)cast.GetFirstActor("bulletList");
+            List<Actor> enemies = enemyList.GetList();
             tick += 1;
             if (tick % 60 == 0 && !oneEnemy)
             {
-                cast.AddActor("enemy", new EnemyTank(ran));
+                enemyList.AddToList(new EnemyTank(ran));
                 oneEnemy = false;
                 for (int i = 0; i < enemies.Count; i++)
                 {
@@ -37,7 +39,8 @@ namespace CSE210_Assult.Game.Scripting
                     if (enemies[i] is EnemyTank)
                     {
                         enemy = (EnemyTank)enemies[i];
-                        enemy.Shoot();
+                        Bullet newBullet = enemy.Shoot();
+                        bulletList.AddToList(newBullet);
                     }
                 }
             }

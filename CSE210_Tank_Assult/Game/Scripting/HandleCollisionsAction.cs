@@ -4,6 +4,7 @@ using System.Data;
 using CSE210_Assult.Game.Casting;
 using CSE210_Assult.Game.Services;
 using Raylib_cs;
+using System.Numerics;
 
 
 namespace CSE210_Assult.Game.Scripting
@@ -35,43 +36,72 @@ namespace CSE210_Assult.Game.Scripting
             }
 
             PlayerTank player = (PlayerTank)cast.GetFirstActor("player");
-            List<Actor> bullets = cast.GetGroupActors("bullet");
-            List<Actor> enemies = cast.GetGroupActors("enemy");
-            List<Actor> thingsToDestroy = new List<Actor>();
-
-            for (int b = 0; b < bullets.Count; b++)
+            BulletList bulletList = (BulletList)cast.GetFirstActor("bulletList");
+            EnemyList enemyList = (EnemyList)cast.GetFirstActor("enemyList");
+            List<Actor> bullets = bulletList.GetList();
+            List<Actor> enemies = enemyList.GetList();
+            List<int> bulletsToDestroy = new List<int>();
+            List<int> enemiesToDestroy = new List<int>();
+            Console.WriteLine(bullets.Count);
+            for (int i = 0; i < bullets.Count; i++)
             {
-                Bullet bullet;
-                if (bullets[b] is Bullet)
+
+                //Console.WriteLine("Loop works");
+                Bullet bullet = (Bullet)bullets[i];
+                Vector2 bulletPos = bullet.GetPosition();
+                if ((bulletPos.X > Constants.MAX_X) || (bulletPos.Y > Constants.MAX_Y) ||
+                (bulletPos.X < 0) || (bulletPos.Y < 0))
                 {
-                    bullet = (Bullet)bullets[b];
-                    for (int i = 0; i < enemies.Count; i++)
+                    //Console.WriteLine("Bullet out of Bounds at " + i);
+                    bulletsToDestroy.Add(i);
+                }
+                else
+                {
+                    if (bullet.GetSource().Equals("player"))
                     {
-                        EnemyTank enemy;
-                        if (enemies[i] is EnemyTank)
+                        for (int j = 0; j < enemies.Count; j++)
                         {
-                            enemy = (EnemyTank)enemies[i];
-                            if (Raylib.CheckCollisionCircles(bullet.GetPosition(), (float)bullet.GetRadius(), 
-                            enemy.GetPosition(), (float)enemy.GetRadius()));
+                            EnemyTank enemy = (EnemyTank)enemies[j];
+                            bool hit = Raylib.CheckCollisionCircles(bullet.GetPosition(), (float)bullet.GetRadius(), 
+                            enemy.GetPosition(), (float)enemy.GetRadius());
+                            if (hit)
                             {
-                                thingsToDestroy.Add(bullet);
-                                thingsToDestroy.Add(enemy);
+                                //Console.WriteLine("Enemy Hit! Index at: " + i + ", " + j);
+                                bulletsToDestroy.Add(i);
+                                enemiesToDestroy.Add(j);
+
                             }
+                            /*else
+                            {
+                                //Console.WriteLine("No collisions detected.");
+                            }*/
+                            
                         }
                     }
+                    else
+                    {
+
+                    }
                 }
+                
             }
 
-            foreach (Actor entity in thingsToDestroy)
-            {
-                if (entity is EnemyTank)
+            try {
+                foreach (int index in enemiesToDestroy)
                 {
-                    cast.RemoveActor("enemy", entity);
+                    enemyList.RemoveFromList(index);
                 }
-                else if (entity is Bullet)
+                foreach (int index in bulletsToDestroy)
                 {
-                    cast.RemoveActor("bullet", entity);
+                    bulletList.RemoveFromList(index);
                 }
+            }
+            catch(ArgumentOutOfRangeException e) {
+                
+            }
+            finally {
+                bulletsToDestroy.Clear();
+                enemiesToDestroy.Clear();
             }
         }
 
@@ -79,11 +109,7 @@ namespace CSE210_Assult.Game.Scripting
         {
             if (isGameOver)
             {
-                
-
-                // create a "game over" message
-                int x = Constants.MAX_X / 2;
-                int y = Constants.MAX_Y / 2;
+                Console.WriteLine("GAME OVER!");
             }
         }
 

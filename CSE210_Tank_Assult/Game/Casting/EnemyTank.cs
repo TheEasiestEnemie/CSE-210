@@ -8,17 +8,18 @@ using CSE210_Assult.Game.Services;
 
 namespace CSE210_Assult.Game.Casting
 {
-    public class EnemyTank: Actor 
+    public class EnemyTank: Bullet
     {
         Texture2D texture;
         Vector2 playerPosition;
         float speed;
         public EnemyTank(Random ran) {
+            //position = new Vector2((float)-radius, (float)-radius);
             speed = 3;
             radius = 25;
             name = "enemy";
             float change = ran.Next(1,5);
-            Console.WriteLine("Random side: " + change);
+            //Console.WriteLine("Random side: " + change);
             if (change == 1)
             {
                 position.X = ran.Next(0, Constants.MAX_X);

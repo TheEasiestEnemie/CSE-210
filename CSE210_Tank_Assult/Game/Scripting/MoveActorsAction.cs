@@ -40,10 +40,20 @@ namespace CSE210_Assult.Game.Scripting
 
         public void Execute(Cast cast, Script script)
         {
-            List<Actor> actors = cast.GetAllActors();
-            foreach (Actor actor in actors)
+            Actor player = cast.GetFirstActor("player");
+            BulletList bulletList = (BulletList)cast.GetFirstActor("bulletList");
+            EnemyList enemyList = (EnemyList)cast.GetFirstActor("enemyList");
+            List<Actor> bullets = bulletList.GetList();
+            List<Actor> enemies = enemyList.GetList();
+
+            player.MoveNext();
+            foreach (Actor bullet in bullets)
             {
-                actor.MoveNext();
+                bullet.MoveNext();
+            }
+            foreach (Actor enemy in enemies)
+            {
+                enemy.MoveNext();
             }
         }
     }

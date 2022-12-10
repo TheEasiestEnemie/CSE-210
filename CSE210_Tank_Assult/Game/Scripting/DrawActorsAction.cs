@@ -27,8 +27,10 @@ namespace CSE210_Assult.Game.Scripting
             // Actor score = cast.GetFirstActor("score");
             // Actor food = cast.GetFirstActor("food");
             Actor player = cast.GetFirstActor("player");
-            List<Actor> bullets = cast.GetGroupActors("bullet");
-            List<Actor> enemies = cast.GetGroupActors("enemy");
+            BulletList bulletList = (BulletList)cast.GetFirstActor("bulletList");
+            EnemyList enemyList = (EnemyList)cast.GetFirstActor("enemyList");
+            List<Actor> bullets = bulletList.GetList();
+            List<Actor> enemies = enemyList.GetList();
 
 
             videoService.ClearBuffer();
@@ -36,13 +38,14 @@ namespace CSE210_Assult.Game.Scripting
 
             foreach (Actor bullet in bullets)
             {
+                //Console.WriteLine("Atempting to draw a bullet...");
                 videoService.DrawActor(bullet);
             }
             foreach (Actor enemy in enemies)
             {
+                //Console.WriteLine("Atempting to draw a enemy...");
                 videoService.DrawActor(enemy);
             }
-            //videoService.DrawActors(/*Add the thing that needs to be drawn*/);
             // videoService.DrawActor(score);
             // videoService.DrawActor(food);
             videoService.FlushBuffer();
