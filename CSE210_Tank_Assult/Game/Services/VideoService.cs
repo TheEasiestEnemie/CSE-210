@@ -55,6 +55,7 @@ namespace CSE210_Assult.Game.Services
         {
             actor.DrawImage();
         }
+        
 
         /// <summary>
         /// Draws the given list of actors on the screen.
@@ -122,6 +123,13 @@ namespace CSE210_Assult.Game.Services
             int b = color.GetBlue();
             int a = color.GetAlpha();
             return new Raylib_cs.Color(r, g, b, a);
+        }
+
+        public void DrawGameOver()
+        {
+            Console.WriteLine("Drawing GameOver...");
+            Raylib.DrawText("GAME OVER!", Constants.MAX_X / 2, Constants.MAX_Y, 50, Raylib_cs.Color.BEIGE);
+            Console.WriteLine("Done Drawing!");
         }
 
     }

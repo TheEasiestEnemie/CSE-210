@@ -62,8 +62,8 @@ namespace CSE210_Assult.Game.Casting
             velocity.X = this.pointer.X / pointerMagnitude * speed;
             velocity.Y = this.pointer.Y / pointerMagnitude * speed;
 
-            Raylib.DrawText("EnemyPointer: " + pointer.X + ", " + pointer.Y, 25, 25, 10, Raylib_cs.Color.BEIGE);
-            Raylib.DrawText("PointerMagnitude: " + pointerMagnitude, 25, 50, 10, Raylib_cs.Color.BEIGE);
+            //Raylib.DrawText("EnemyPointer: " + pointer.X + ", " + pointer.Y, 25, 25, 10, Raylib_cs.Color.BEIGE);
+            //Raylib.DrawText("PointerMagnitude: " + pointerMagnitude, 25, 50, 10, Raylib_cs.Color.BEIGE);
             position.X = (int)(position.X + velocity.X);
             position.Y = (int)(position.Y + velocity.Y);
         }

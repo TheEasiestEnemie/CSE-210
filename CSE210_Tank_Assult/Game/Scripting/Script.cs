@@ -54,6 +54,11 @@ namespace CSE210_Assult.Game.Scripting
             return results;
         }
 
+        public void RemoveActions(string group)
+        {
+            actions.Remove(group);
+        }
+
         /// <summary>
         /// Removes the given action from the given group.
         /// </summary>

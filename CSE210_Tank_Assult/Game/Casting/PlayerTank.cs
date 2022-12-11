@@ -2,12 +2,13 @@ using Raylib_cs;
 using System.Numerics;
 using CSE210_Assult.Game.Casting;
 using CSE210_Assult.Game.Services;
+using CSE210_Assult.Game.Scripting;
 
 namespace CSE210_Assult.Game.Casting
 {
     public class PlayerTank: Actor {
         Texture2D texture;
-        public PlayerTank() {
+        public PlayerTank(Script script) {
             name = "player";
             position.X = (float)Constants.MAX_X / 2.0f;
             position.Y = (float)Constants.MAX_Y / 2.0f;

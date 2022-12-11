@@ -30,9 +30,9 @@ namespace CSE210_Assult.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            if (!isGameOver)
+            if (isGameOver)
             {
-                HandleGameOver(cast);
+                HandleGameOver(cast, script);
             }
 
             PlayerTank player = (PlayerTank)cast.GetFirstActor("player");
@@ -42,7 +42,7 @@ namespace CSE210_Assult.Game.Scripting
             List<Actor> enemies = enemyList.GetList();
             List<int> bulletsToDestroy = new List<int>();
             List<int> enemiesToDestroy = new List<int>();
-            Console.WriteLine(bullets.Count);
+            //Console.WriteLine(bullets.Count);
             for (int i = 0; i < bullets.Count; i++)
             {
 
@@ -80,7 +80,13 @@ namespace CSE210_Assult.Game.Scripting
                     }
                     else
                     {
-
+                        bool playerHit = Raylib.CheckCollisionCircles(bullet.GetPosition(), (float)bullet.GetRadius(), 
+                        player.GetPosition(), (float)player.GetRadius());
+                        //Console.WriteLine("Enemy bullet fired. PlayerHit? " + playerHit);
+                        if (playerHit)
+                        {
+                            isGameOver = true;
+                        }
                     }
                 }
                 
@@ -105,12 +111,19 @@ namespace CSE210_Assult.Game.Scripting
             }
         }
 
-        private void HandleGameOver(Cast cast)
+        private void HandleGameOver(Cast cast, Script script)
         {
-            if (isGameOver)
-            {
-                Console.WriteLine("GAME OVER!");
-            }
+            //////////////////////// MAKE A FUNCTION IN DRAW ACTORS ////////////////////////
+            Console.WriteLine("GAME OVER!");
+            Raylib.DrawText("GAME OVER!", Constants.MAX_X / 2, Constants.MAX_Y, 50, Raylib_cs.Color.BEIGE);
+            script.RemoveActions("update");
+
+        }
+
+        public bool GameStatus()
+        {
+            Console.WriteLine("Game over being acessed...");
+            return isGameOver;
         }
 
     }

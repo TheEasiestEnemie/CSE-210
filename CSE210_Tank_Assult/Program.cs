@@ -20,6 +20,7 @@ namespace CSE210_Assult
         {
             // create the cast
             Cast cast = new Cast();
+            Script script = new Script();
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
@@ -27,19 +28,18 @@ namespace CSE210_Assult
             VideoService videoService = new VideoService(false);
             videoService.OpenWindow();
             
-            PlayerTank player = new PlayerTank();
+            PlayerTank player = new PlayerTank(script);
             BulletList bulletList = new BulletList();
             EnemyList enemyList = new EnemyList();
             cast.AddActor("player", player);
             cast.AddActor("bulletList", bulletList);
             cast.AddActor("enemyList", enemyList);
             // create the script
-            Script script = new Script();
             script.AddAction("input", new ControlActorsAction(keyboardService, mouseServices));
             script.AddAction("update", new MoveActorsAction());
-            script.AddAction("update", new HandleCollisionsAction());
             script.AddAction("update", new HandleEnemiesAction());
-            script.AddAction("output", new DrawActorsAction(videoService));
+            script.AddAction("update", new HandleCollisionsAction());
+            script.AddAction("output", new DrawActorsAction(videoService, script));
 
             // start the game
             Director director = new Director(videoService);
